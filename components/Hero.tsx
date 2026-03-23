@@ -1,6 +1,26 @@
 "use client";
 
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
+import { subscribe } from "@/app/actions/subscribe";
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className="w-full rounded-lg bg-[#D64933] px-6 py-4 text-base font-bold tracking-wide text-white transition-opacity hover:opacity-90 disabled:opacity-60 sm:w-auto sm:self-start"
+      style={{ fontFamily: "var(--font-montserrat)" }}
+    >
+      {pending ? "SENDING..." : "DOWNLOAD NOW"}
+    </button>
+  );
+}
+
 export default function Hero() {
+  const [state, formAction] = useActionState(subscribe, null);
+
   return (
     <section
       id="cheat-sheet"
@@ -29,44 +49,52 @@ export default function Hero() {
           </p>
 
           {/* Email Capture Form */}
-          <form
-            className="mt-8 flex flex-col gap-4"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <input
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                required
-                className="w-full rounded-lg border border-[#2C2621]/20 bg-white px-4 py-3 text-[#2C2621] placeholder-[#2C2621]/40 focus:border-[#D36A18] focus:outline-none focus:ring-2 focus:ring-[#D36A18]/30"
-                style={{ fontFamily: "var(--font-open-sans)" }}
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                required
-                className="w-full rounded-lg border border-[#2C2621]/20 bg-white px-4 py-3 text-[#2C2621] placeholder-[#2C2621]/40 focus:border-[#D36A18] focus:outline-none focus:ring-2 focus:ring-[#D36A18]/30"
-                style={{ fontFamily: "var(--font-open-sans)" }}
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full rounded-lg bg-[#D64933] px-6 py-4 text-base font-bold tracking-wide text-white transition-opacity hover:opacity-90 sm:w-auto sm:self-start"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              DOWNLOAD NOW
-            </button>
-
+          {state?.success ? (
             <p
-              className="text-xs text-gray-500"
+              className="mt-8 font-bold text-[#D36A18]"
               style={{ fontFamily: "var(--font-open-sans)" }}
             >
-              We respect your inbox. Unsubscribe at any time.
+              ✨ Success! Check your inbox for your Cheat Sheet.
             </p>
-          </form>
+          ) : (
+            <form action={formAction} className="mt-8 flex flex-col gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="First Name"
+                  className="w-full rounded-lg border border-[#2C2621]/20 bg-white px-4 py-3 text-[#2C2621] placeholder-[#2C2621]/40 focus:border-[#D36A18] focus:outline-none focus:ring-2 focus:ring-[#D36A18]/30"
+                  style={{ fontFamily: "var(--font-open-sans)" }}
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address"
+                  required
+                  className="w-full rounded-lg border border-[#2C2621]/20 bg-white px-4 py-3 text-[#2C2621] placeholder-[#2C2621]/40 focus:border-[#D36A18] focus:outline-none focus:ring-2 focus:ring-[#D36A18]/30"
+                  style={{ fontFamily: "var(--font-open-sans)" }}
+                />
+              </div>
+
+              <SubmitButton />
+
+              {state?.error && (
+                <p
+                  className="text-sm font-semibold text-[#D64933]"
+                  style={{ fontFamily: "var(--font-open-sans)" }}
+                >
+                  {state.error}
+                </p>
+              )}
+
+              <p
+                className="text-xs text-gray-500"
+                style={{ fontFamily: "var(--font-open-sans)" }}
+              >
+                We respect your inbox. Unsubscribe at any time.
+              </p>
+            </form>
+          )}
         </div>
 
         {/* Right — Visual Placeholder */}
