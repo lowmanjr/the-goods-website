@@ -79,7 +79,7 @@ export default function DetoxSales() {
         </div>
 
         <a
-          href="YOUR_STRIPE_LINK_HERE"
+          href="https://buy.stripe.com/28E28rcocap88rY91TbZe01"
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-full bg-[#D36A18] px-10 py-4 text-lg font-bold tracking-wide text-white transition-opacity hover:opacity-90"
