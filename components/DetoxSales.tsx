@@ -1,5 +1,3 @@
-"use client";
-
 const features = [
   {
     title: "The Great Purge",
@@ -80,16 +78,15 @@ export default function DetoxSales() {
           </span>
         </div>
 
-        <button
-          type="button"
-          onClick={() => {
-            // TODO: wire up Stripe / payment processor
-          }}
+        <a
+          href="YOUR_STRIPE_LINK_HERE"
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-full bg-[#D36A18] px-10 py-4 text-lg font-bold tracking-wide text-white transition-opacity hover:opacity-90"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
           UNLOCK THE GUIDE
-        </button>
+        </a>
       </div>
     </section>
   );
