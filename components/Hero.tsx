@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { subscribe } from "@/app/actions/subscribe";
@@ -97,25 +98,16 @@ export default function Hero() {
           )}
         </div>
 
-        {/* Right — Visual Placeholder */}
+        {/* Right — Cheat Sheet Mockup */}
         <div className="flex items-center justify-center">
-          <div className="flex h-80 w-full max-w-sm items-center justify-center rounded-2xl bg-[#D36A18]/15 ring-2 ring-[#D36A18]/30 md:h-96">
-            <div className="text-center">
-              <div className="mx-auto mb-3 h-16 w-16 rounded-full bg-[#D36A18]/30" />
-              <p
-                className="text-sm font-semibold text-[#D36A18]"
-                style={{ fontFamily: "var(--font-montserrat)" }}
-              >
-                Visual / Graphic
-              </p>
-              <p
-                className="mt-1 text-xs text-[#D36A18]/70"
-                style={{ fontFamily: "var(--font-open-sans)" }}
-              >
-                (cheat sheet mockup goes here)
-              </p>
-            </div>
-          </div>
+          <Image
+            src="/cheat-sheet.png"
+            alt="Produce Wash Cheat Sheet"
+            width={500}
+            height={650}
+            className="rounded-xl shadow-2xl w-full max-w-md border border-gray-100"
+            priority
+          />
         </div>
       </div>
     </section>
