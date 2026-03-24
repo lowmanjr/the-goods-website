@@ -19,6 +19,7 @@ export async function subscribe(prevState: unknown, formData: FormData) {
       body: JSON.stringify({
         email,
         fields: { name: name ?? "" },
+        groups: ["182762483392448260"],
       }),
     });
 
