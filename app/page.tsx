@@ -1,19 +1,114 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import DetoxSales from "@/components/DetoxSales";
-import ShopMyKitchen from "@/components/ShopMyKitchen";
-import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-      <main className="flex flex-1 flex-col">
-        <Hero />
-        <DetoxSales />
-        <ShopMyKitchen />
-      </main>
-      <Footer />
-    </>
+    <div className="min-h-screen bg-[#0A0A0A] text-white selection:bg-[#D36A18] selection:text-white">
+
+      {/* ── Hero ── */}
+      <div className="max-w-4xl mx-auto px-5 pt-20 pb-16 text-center">
+        <p
+          className="text-[#D36A18] font-bold tracking-widest text-xs uppercase mb-6"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          THE 3.5M VIEW FRAMEWORK
+        </p>
+
+        <h1
+          className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          Build Viral AI Videos in Minutes.{" "}
+          <span className="text-[#D36A18]">No 3D Animation Skills Required.</span>
+        </h1>
+
+        <p
+          className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          The exact step-by-step framework I used to generate 3.5 million views
+          with a single AI video. Get the prompts, the tools, and the workflow.
+        </p>
+
+        <Link
+          href="/3d-blueprint"
+          className="inline-block bg-[#D36A18] text-white font-bold text-lg px-10 py-5 rounded-full shadow-[0_0_40px_-10px_#D36A18] hover:bg-[#b85a12] hover:scale-105 transition-all duration-300"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          Unlock the Free AI Blueprint
+        </Link>
+      </div>
+
+      {/* ── Social Proof Banner ── */}
+      <div className="border-y border-white/10 bg-white/[0.02] py-8 mt-8">
+        <p
+          className="text-sm md:text-base text-gray-400 font-medium text-center px-5"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          The exact system used to generate{" "}
+          <span className="text-[#D36A18] font-bold">3,500,000+ views</span> and{" "}
+          <span className="text-[#D36A18] font-bold">50,000+ saves</span> across
+          Instagram and TikTok.
+        </p>
+      </div>
+
+      {/* ── Resources Grid ── */}
+      <div className="max-w-4xl mx-auto px-5 py-20">
+        <h2
+          className="text-2xl font-bold text-white mb-8"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          Creator Tools &amp; Resources
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Card 1 — Produce Wash */}
+          <Link
+            href="/produce-wash"
+            className="block bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-[#D36A18]/50 transition duration-300 group"
+          >
+            <span className="text-3xl mb-4 block">🫐</span>
+            <p
+              className="text-lg font-bold text-white mb-2 group-hover:text-[#D36A18] transition"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              The Viral Produce Wash Guide
+            </p>
+            <p
+              className="text-sm text-gray-400"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              The original guide to keeping your berries crisp for weeks.
+            </p>
+          </Link>
+
+          {/* Card 2 — Amazon Storefront */}
+          <a
+            href="#"
+            className="block bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-[#D36A18]/50 transition duration-300 group"
+          >
+            <span className="text-3xl mb-4 block">🛒</span>
+            <p
+              className="text-lg font-bold text-white mb-2 group-hover:text-[#D36A18] transition"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              My Production Gear
+            </p>
+            <p
+              className="text-sm text-gray-400"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              Shop the exact cameras, lighting, and kitchen tools I use in my
+              videos.
+            </p>
+          </a>
+        </div>
+      </div>
+
+      {/* ── Footer ── */}
+      <footer className="text-center pb-10 text-xs text-gray-600" style={{ fontFamily: "var(--font-open-sans)" }}>
+        © {new Date().getFullYear()} The Goods Universe. All rights reserved.
+      </footer>
+
+    </div>
   );
 }
