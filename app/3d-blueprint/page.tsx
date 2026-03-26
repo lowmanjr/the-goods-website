@@ -93,7 +93,7 @@ export default function BlueprintSqueezePage() {
           <img
             src="/proof.png"
             alt="Analytics"
-            className="mx-auto w-full max-w-md max-h-96 object-contain rounded-xl shadow-2xl border border-white/10 mt-8"
+            className="mx-auto w-full max-w-xl h-auto rounded-xl shadow-2xl border border-white/10 mt-12 mb-8"
           />
         </div>
       </div>
