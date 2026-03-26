@@ -966,26 +966,10 @@ function Module4() {
 function Module5() {
   const [checked, setChecked] = useState(false);
 
-  const nicheExamples = [
-    {
-      emoji: "💰",
-      niche: "Finance",
-      example: "3D wallet warning about hidden bank fees",
-    },
-    {
-      emoji: "📡",
-      niche: "Tech",
-      example: "3D router explaining why your Wi-Fi is slow",
-    },
-    {
-      emoji: "🏃",
-      niche: "Fitness",
-      example: "3D running shoe explaining the cause of shin splints",
-    },
-  ];
-
   return (
     <div className="space-y-8">
+
+      {/* ── 1. Intro ── */}
       <div>
         <h2
           className="mb-1 text-2xl font-extrabold text-[#2C2621] sm:text-3xl"
@@ -999,108 +983,168 @@ function Module5() {
         >
           Module 5 of 5
         </p>
-      </div>
-
-      {/* Execution > Tools */}
-      <section>
-        <h3
-          className="mb-3 text-lg font-bold text-[#D36A18]"
-          style={{ fontFamily: "var(--font-montserrat)" }}
-        >
-          Execution &gt; Tools
-        </h3>
-        <div className="space-y-3">
-          <div className="rounded-xl border border-gray-200 bg-white p-5">
-            <p
-              className="mb-2 font-semibold text-[#2C2621]"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              The Fear / Relief Metric
-            </p>
-            <p
-              className="text-sm leading-relaxed text-gray-600"
-              style={{ fontFamily: "var(--font-open-sans)" }}
-            >
-              Every viral edutainment video follows the same emotional arc:
-              introduce a{" "}
-              <span className="font-semibold text-[#2C2621]">hidden danger</span>{" "}
-              the viewer didn&apos;t know about, then immediately hand them a{" "}
-              <span className="font-semibold text-[#2C2621]">
-                cheap, specific solution
-              </span>
-              . The gap between fear and relief is where the save and share
-              happens. If your video doesn&apos;t create that gap, it&apos;s just
-              information — not content.
-            </p>
-          </div>
-          <div className="rounded-xl border border-gray-200 bg-white p-5">
-            <p
-              className="mb-2 font-semibold text-[#2C2621]"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              Saveable Utility
-            </p>
-            <p
-              className="text-sm leading-relaxed text-gray-600"
-              style={{ fontFamily: "var(--font-open-sans)" }}
-            >
-              Generic advice gets watched. Specific recipes get saved. Instead
-              of &ldquo;wash your produce&rdquo;, give them{" "}
-              <span className="font-semibold text-[#2C2621]">
-                a ratio, a time, and a reason
-              </span>{" "}
-              — &ldquo;1 part white vinegar to 3 parts water, soak for 15 minutes,
-              removes 98% of surface pesticides.&rdquo; Specificity is the algorithm
-              signal. It tells the platform this content is worth recommending.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Finding Your Niche */}
-      <section>
-        <h3
-          className="mb-3 text-lg font-bold text-[#D36A18]"
-          style={{ fontFamily: "var(--font-montserrat)" }}
-        >
-          Finding Your Niche
-        </h3>
         <p
-          className="mb-3 text-sm leading-relaxed text-gray-600"
+          className="mt-4 text-sm leading-relaxed text-gray-600"
           style={{ fontFamily: "var(--font-open-sans)" }}
         >
-          The talking-object format works in any niche where everyday items
-          carry hidden knowledge. The character becomes a metaphor — and
-          metaphors are more memorable than facts.
+          You now have the exact technical workflow to build a 3.5 million-view
+          video. But remember: AI is just the paintbrush. The{" "}
+          <em>concept</em> is what actually goes viral. Here is the underlying
+          psychology that turns a cool 3D animation into an algorithmic machine.
         </p>
-        <div className="space-y-3">
-          {nicheExamples.map(({ emoji, niche, example }) => (
-            <div
-              key={niche}
-              className="flex items-start gap-4 rounded-xl border border-gray-200 bg-white p-4"
-            >
-              <span className="text-2xl">{emoji}</span>
-              <div>
-                <p
-                  className="font-semibold text-[#2C2621]"
-                  style={{ fontFamily: "var(--font-montserrat)" }}
-                >
-                  {niche}
-                </p>
-                <p
-                  className="mt-0.5 text-sm text-gray-500"
-                  style={{ fontFamily: "var(--font-open-sans)" }}
-                >
-                  {example}
-                </p>
-              </div>
-            </div>
-          ))}
+      </div>
+
+      {/* ── 2. Psychology of Virality ── */}
+      <section>
+        <h3
+          className="text-xl font-bold text-[#D36A18] mt-8 mb-4"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          The Psychology of Virality
+        </h3>
+        <p
+          className="text-sm leading-relaxed text-gray-600 mb-4"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          A cute character isn&apos;t enough. Every viral edutainment video
+          follows the exact same emotional arc.
+        </p>
+
+        {/* Card 1: Fear / Relief */}
+        <div className="bg-white border border-gray-200 shadow-sm rounded-xl p-6 mb-6">
+          <h4
+            className="text-lg font-bold text-[#D36A18] mb-2"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+          >
+            1. The Fear / Relief Metric
+          </h4>
+          <p
+            className="text-sm leading-relaxed text-gray-600"
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            You must introduce a{" "}
+            <strong className="text-[#2C2621]">hidden danger</strong> the viewer
+            didn&apos;t know about, and then immediately hand them a{" "}
+            <strong className="text-[#2C2621]">cheap, specific solution</strong>.
+            The psychological gap between that fear and that relief is where the
+            &ldquo;Save&rdquo; and &ldquo;Share&rdquo; happens. If your video doesn&apos;t create
+            that gap, it is just information—not content.
+          </p>
+        </div>
+
+        {/* Card 2: Saveable Utility */}
+        <div className="bg-white border border-gray-200 shadow-sm rounded-xl p-6 mb-6">
+          <h4
+            className="text-lg font-bold text-[#D36A18] mb-2"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+          >
+            2. Saveable Utility (The Algorithm Signal)
+          </h4>
+          <p
+            className="text-sm leading-relaxed text-gray-600 mb-3"
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            Generic advice gets watched. Specific recipes get{" "}
+            <em>saved</em>. Saves are the strongest signal you can send to an
+            algorithm.
+          </p>
+          <p
+            className="text-sm mb-1"
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            <span className="font-bold text-red-500">❌ Bad:</span>{" "}
+            <span className="text-gray-600">
+              &ldquo;Wash your produce to remove pesticides.&rdquo;
+            </span>
+          </p>
+          <p
+            className="text-sm mb-3"
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            <span className="font-bold text-green-600">✅ Viral:</span>{" "}
+            <span className="text-gray-600">
+              &ldquo;Use 1 part white vinegar to 3 parts water. Soak for 15
+              minutes. This dissolves the wax and removes 98% of surface
+              pesticides.&rdquo;
+            </span>
+          </p>
+          <p
+            className="text-sm text-gray-600"
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            <span className="font-bold text-[#2C2621]">The Rule:</span> Always
+            give them a ratio, a time, and a reason.
+          </p>
         </div>
       </section>
 
-      {/* Action item */}
-      <div className="rounded-xl border border-[#D36A18]/30 bg-[#D36A18]/10 p-5">
+      {/* ── 3. Infinite Niche Matrix ── */}
+      <section>
+        <h3
+          className="text-xl font-bold text-[#D36A18] mt-8 mb-4"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          The Infinite Niche Matrix
+        </h3>
+        <p
+          className="text-sm leading-relaxed text-gray-600 mb-6"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          The &ldquo;Talking Object&rdquo; format works in absolutely any niche where
+          everyday items carry hidden knowledge. The character becomes a
+          metaphor—and metaphors are infinitely more memorable than facts. Here
+          is how to apply this to other industries:
+        </p>
+
+        {[
+          {
+            emoji: "💰",
+            iconBg: "bg-green-100",
+            niche: "Finance",
+            desc: "A distressed, empty 3D leather wallet warning the viewer about how hidden index fund fees are draining their retirement.",
+          },
+          {
+            emoji: "📡",
+            iconBg: "bg-blue-100",
+            niche: "Tech",
+            desc: "An overheating, exhausted 3D Wi-Fi router explaining exactly why your internet speed randomly drops by 50% every night at 8 PM.",
+          },
+          {
+            emoji: "🏃",
+            iconBg: "bg-orange-100",
+            niche: "Fitness",
+            desc: "A worn-out, crying 3D running shoe explaining the mechanical cause of shin splints and how to lace them differently to fix it.",
+          },
+        ].map(({ emoji, iconBg, niche, desc }) => (
+          <div
+            key={niche}
+            className="flex items-center gap-4 bg-gray-50 border border-gray-200 rounded-xl p-4 mb-3"
+          >
+            <div
+              className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full ${iconBg} text-xl`}
+            >
+              {emoji}
+            </div>
+            <div>
+              <span
+                className="block font-bold text-[#2C2621]"
+                style={{ fontFamily: "var(--font-montserrat)" }}
+              >
+                {niche}
+              </span>
+              <span
+                className="text-sm text-gray-500"
+                style={{ fontFamily: "var(--font-open-sans)" }}
+              >
+                {desc}
+              </span>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* ── 4. Action Item ── */}
+      <div className="rounded-xl border border-[#D36A18]/30 bg-[#D36A18]/10 p-5 mt-8">
         <label className="flex cursor-pointer items-start gap-3">
           <input
             type="checkbox"
@@ -1113,9 +1157,10 @@ function Module5() {
             style={{ fontFamily: "var(--font-open-sans)" }}
           >
             <span className="font-semibold text-[#2C2621]">Action Item:</span>{" "}
-            Write the Fear/Relief arc for your next video in two sentences —
-            one for the hidden danger, one for the specific solution. Then pick
-            your niche character and start your next script.
+            Write the Fear/Relief arc for your next video in exactly two
+            sentences—one for the hidden danger, one for the specific solution.
+            Then, pick your everyday niche character, open your Mega-Prompt, and
+            start your next script. You have the blueprint. Now go build.
           </span>
         </label>
       </div>
