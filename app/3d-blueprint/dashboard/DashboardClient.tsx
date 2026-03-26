@@ -574,7 +574,7 @@ function Module2() {
 
 // ─── Module 3 ─────────────────────────────────────────────────────────────────
 
-const VEO_PROMPT = `Cinematic camera push-in. High-pressure tap water violently splashes over the character and against the ceramic surface, sending hyper-realistic water droplets bouncing in every direction. Slow motion. Natural lighting.`;
+const VEO_PROMPT = `A 3D anthropomorphic blueberry stands under a running faucet. The water bounces harmlessly off its skin, revealing it is still covered in glowing green toxic dots and fuzzy white mold spores. Static camera, slow push in.`;
 
 function Module3() {
   const [checked, setChecked] = useState(false);
