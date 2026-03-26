@@ -94,11 +94,22 @@ function PaywallModal({ onClose }: { onClose: () => void }) {
 
 // ─── Module Content ───────────────────────────────────────────────────────────
 
+const MEGA_PROMPT = `Act as an expert short-form scriptwriter. I want to make a 30-second viral video about [INSERT YOUR TOPIC/PAIN POINT HERE]. Using the 'Anti-Hook' framework, write a 60-word maximum script broken down into 3 parts: The Interruption, The Problem, and The Solution. After the script, break the video down into 3 visual scenes. For each scene, write a highly detailed 'Text-to-Image' prompt designed for an AI image generator. The image prompt must include the main character, the setting, cinematic lighting, and end with the aspect ratio '--ar 9:16'.`;
+
 function Module1() {
   const [checked, setChecked] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  function handleCopy() {
+    navigator.clipboard.writeText(MEGA_PROMPT);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
 
   return (
     <div className="space-y-8">
+
+      {/* ── 1. Intro ── */}
       <div>
         <h2
           className="mb-1 text-2xl font-extrabold text-[#2C2621] sm:text-3xl"
@@ -112,40 +123,62 @@ function Module1() {
         >
           Module 1 of 5
         </p>
+        <p
+          className="mt-4 text-sm leading-relaxed text-gray-600"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          Virality is not an accident. It is a formula. The biggest secret to
+          these 3D edutainment videos is that the AI does 90% of the heavy
+          lifting. You do not need to be a 3D animator or a professional
+          copywriter. You just need to know exactly what instructions to feed
+          the machine.
+        </p>
       </div>
 
-      {/* Anti-Hook Script Structure */}
+      {/* ── 2. Anti-Hook Script Structure ── */}
       <section>
         <h3
-          className="mb-4 text-lg font-bold text-[#D36A18]"
+          className="mb-3 text-lg font-bold text-[#D36A18]"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
-          The Anti-Hook Script Structure
+          The &ldquo;Anti-Hook&rdquo; Script Structure
         </h3>
-        <div className="space-y-3">
+        <p
+          className="mb-4 text-sm leading-relaxed text-gray-600"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          Most creators start videos by saying,{" "}
+          <em>&ldquo;Here is how to do [X].&rdquo;</em> That is boring. People scroll
+          past helpful advice. To get 3.5 million views, we use an{" "}
+          <strong className="text-[#2C2621]">Anti-Hook</strong>. We interrupt
+          their pattern by telling them that a habit they do every single day is
+          actually wrong, and then we immediately offer the visual proof. Here is
+          the exact 3-part script psychology I use for every video:
+        </p>
+        <div>
           {[
             {
               step: "1",
-              label: "The Interruption",
-              desc: "Stop the scroll in the first 2 seconds with an unexpected visual or statement that creates cognitive dissonance.",
+              label: "The Interruption (0:00 to 0:03)",
+              desc: "Stop the scroll in the first 2 seconds with an unexpected visual and a negative command to create instant cognitive dissonance.",
             },
             {
               step: "2",
-              label: "The Problem",
-              desc: "Agitate the pain point your viewer is already feeling. Make them nod before they even think.",
+              label: "The Problem (0:03 to 0:15)",
+              desc: "Visually agitate the pain point. Explain why their habit is failing them. Make them nod their head before they even realize it.",
             },
             {
               step: "3",
-              label: "The Solution",
-              desc: "Introduce your character or concept as the inevitable answer. Keep it simple — one transformation.",
+              label: "The Solution (0:15 to 0:30)",
+              desc: "Introduce your character or concept as the inevitable answer. Keep it dead simple. One specific transformation or rule.",
             },
           ].map(({ step, label, desc }) => (
             <div
               key={step}
-              className="flex gap-4 rounded-xl border border-gray-200 bg-white p-4"
+              className="bg-white shadow-sm border border-gray-200 rounded-xl p-4 flex gap-4 mb-3"
             >
               <span
-                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#D36A18] text-sm font-bold text-white"
+                className="bg-[#D36A18] text-white rounded-full h-8 w-8 flex items-center justify-center font-bold shrink-0 text-sm"
                 style={{ fontFamily: "var(--font-montserrat)" }}
               >
                 {step}
@@ -169,38 +202,137 @@ function Module1() {
         </div>
       </section>
 
-      {/* Process image */}
-      <div className="overflow-hidden rounded-xl border border-gray-200">
-        <img
-          src="/process.jpg"
-          alt="Blueprint process"
-          className="w-full h-auto rounded-xl shadow-lg border border-gray-200"
-        />
-      </div>
-
-      {/* Prompt Automation Hack */}
+      {/* ── 3. Swipe File ── */}
       <section>
         <h3
           className="mb-3 text-lg font-bold text-[#D36A18]"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
-          The Prompt Automation Hack
+          What a Perfect Output Looks Like (The 3.5M View Example)
         </h3>
-        <div className="rounded-xl border border-gray-200 bg-white p-5">
+        <p
+          className="mb-4 text-sm leading-relaxed text-gray-600"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          Before you generate your own script, look at the exact Scene 1
+          breakdown that went viral.{" "}
+          <em>
+            Notice how the voiceover is punchy and conversational, and the image
+            prompt contains highly specific lighting and style keywords. This is
+            the gold standard you want your AI to generate for your own niche.
+          </em>
+        </p>
+
+        {/* Swipe file card */}
+        <div className="bg-[#D36A18]/5 border border-[#D36A18]/20 rounded-xl p-5 space-y-4">
+          <p
+            className="font-bold text-[#2C2621]"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+          >
+            🎬 Scene 1: The Hook
+          </p>
+          <div>
+            <p
+              className="text-sm text-gray-600"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              <span className="font-semibold text-[#2C2621]">Concept:</span> We
+              challenge the standard quick tap-water rinse. We show that water
+              literally bounces off the blueberry&apos;s natural waxy coating,
+              leaving all the bad stuff behind.
+            </p>
+          </div>
+          <div>
+            <p
+              className="text-sm text-gray-600"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              <span className="font-semibold text-[#2C2621]">
+                🎙️ Narrator Voiceover:
+              </span>{" "}
+              <em>
+                &ldquo;Stop rinsing your blueberries under the tap! Plain water
+                isn&apos;t doing anything, and it&apos;s exactly why your
+                expensive berries are molding in the fridge after two days.&rdquo;
+              </em>
+            </p>
+          </div>
+          <div>
+            <p
+              className="text-sm text-gray-600"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              <span className="font-semibold text-[#2C2621]">
+                🎨 Image Prompt:
+              </span>{" "}
+              A cute 3D anthropomorphic plump blueberry standing under a kitchen
+              faucet. Crystal clear water is bouncing harmlessly off its waxy
+              skin, but the berry is still covered in tiny glowing green toxic
+              dots and fuzzy white mold spores. Cinematic studio lighting,
+              &ldquo;Sausage Party&rdquo; Pixar adult animation style.{" "}
+              <span className="font-mono text-[#D36A18]">--ar 9:16</span>
+            </p>
+          </div>
+        </div>
+
+        {/* Pro-Tip callout */}
+        <div className="border-l-4 border-[#D36A18] bg-white p-4 shadow-sm rounded-r-xl mt-4">
           <p
             className="text-sm leading-relaxed text-gray-600"
             style={{ fontFamily: "var(--font-open-sans)" }}
           >
-            Instead of writing a new prompt for every scene, build a{" "}
-            <span className="font-semibold text-[#2C2621]">master prompt template</span>{" "}
-            with locked variables (character style, lighting, color palette) and
-            only swap the action-specific phrase. This cuts generation time by
-            ~70% and keeps every scene visually consistent.
+            💡{" "}
+            <span className="font-semibold text-[#2C2621]">Pro-Tip:</span>{" "}
+            Notice the{" "}
+            <span className="font-mono text-[#D36A18]">--ar 9:16</span> at the
+            end of the image prompt? That forces the AI to generate a vertical
+            image that perfectly fits a phone screen. Never skip that.
           </p>
         </div>
       </section>
 
-      {/* Action item checkbox */}
+      {/* ── 4. Process Image ── */}
+      <img
+        src="/process.jpg"
+        alt="Blueprint process"
+        className="w-full h-auto rounded-xl shadow-lg border border-gray-200 mt-8 mb-8"
+      />
+
+      {/* ── 5. Mega-Prompt ── */}
+      <section>
+        <h3
+          className="mb-3 text-lg font-bold text-[#D36A18]"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          The Copy &amp; Paste Automation Hack
+        </h3>
+        <p
+          className="mb-4 text-sm leading-relaxed text-gray-600"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          You should not be writing these scripts from scratch, and you{" "}
+          <em>definitely</em> should not be manually thinking up the visual scene
+          descriptions. Copy and paste this exact{" "}
+          <strong className="text-[#2C2621]">Mega-Prompt</strong> into your
+          favorite AI assistant (like Gemini or ChatGPT). It will automatically
+          write your script AND format your scene descriptions so they are ready
+          to drop directly into an image generator.
+        </p>
+
+        {/* Dark terminal */}
+        <div className="bg-gray-900 text-gray-100 font-mono text-sm rounded-xl p-5 relative mt-4 shadow-lg leading-relaxed">
+          <button
+            onClick={handleCopy}
+            className="absolute right-3 top-3 rounded-md bg-white/10 px-3 py-1 text-xs font-semibold text-white transition hover:bg-white/20"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+          >
+            {copied ? "Copied!" : "Copy"}
+          </button>
+          <p className="pr-16 text-gray-300">{MEGA_PROMPT}</p>
+        </div>
+      </section>
+
+      {/* ── 6. Action Item ── */}
       <div className="rounded-xl border border-[#D36A18]/30 bg-[#D36A18]/10 p-5">
         <label className="flex cursor-pointer items-start gap-3">
           <input
@@ -213,9 +345,10 @@ function Module1() {
             className={`text-sm leading-relaxed ${checked ? "text-gray-400 line-through" : "text-gray-700"}`}
             style={{ fontFamily: "var(--font-open-sans)" }}
           >
-            <span className="font-semibold text-[#2C2621]">Action Item:</span> Write
-            your first Anti-Hook script using the 3-step structure above. Aim
-            for under 60 words total — constraint breeds creativity.
+            <span className="font-semibold text-[#2C2621]">Action Item:</span>{" "}
+            Copy the Mega-Prompt above, plug in your niche&apos;s biggest pain
+            point, and generate your first script and scene list. Remember: keep
+            the spoken script under 60 words. Constraint breeds virality.
           </span>
         </label>
       </div>
