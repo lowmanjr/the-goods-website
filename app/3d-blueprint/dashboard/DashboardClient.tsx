@@ -1327,6 +1327,30 @@ export default function DashboardClient({ initialUnlocked, sessionId }: Dashboar
             {activeModule === 3 && <Module3 />}
             {activeModule === 4 && <Module4 />}
             {activeModule === 5 && <Module5 />}
+
+            {/* ── Pagination Footer ── */}
+            <div className="mt-12 flex flex-col-reverse sm:flex-row justify-between gap-4 border-t border-gray-200 pt-8 pb-12">
+              {activeModule > 1 ? (
+                <button
+                  onClick={() => setActiveModule(activeModule - 1)}
+                  className="w-full sm:w-auto px-6 py-4 rounded-xl font-bold text-gray-400 bg-white/[0.02] border border-gray-200 hover:bg-gray-100 hover:text-[#2C2621] transition-all text-center"
+                  style={{ fontFamily: "var(--font-montserrat)" }}
+                >
+                  &larr; Previous Module
+                </button>
+              ) : (
+                <div />
+              )}
+              {activeModule < 5 && (
+                <button
+                  onClick={() => handleModuleClick(modules[activeModule])}
+                  className="w-full sm:w-auto px-6 py-4 rounded-xl font-bold text-white bg-[#D36A18] hover:bg-[#b85a12] shadow-[0_0_20px_-5px_#D36A18] transition-all text-center"
+                  style={{ fontFamily: "var(--font-montserrat)" }}
+                >
+                  Next Module {activeModule === 2 && !isUnlocked ? "🔒" : "→"}
+                </button>
+              )}
+            </div>
           </div>
         </main>
       </div>
