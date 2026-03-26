@@ -353,6 +353,448 @@ function Module2() {
   );
 }
 
+// ─── Module 3 ─────────────────────────────────────────────────────────────────
+
+function Module3() {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <div className="space-y-8">
+      <div>
+        <h2
+          className="mb-1 text-2xl font-extrabold text-[#2C2621] sm:text-3xl"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          Bringing the Assets to Life (Motion &amp; Audio)
+        </h2>
+        <p
+          className="text-sm text-gray-400"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          Module 3 of 5
+        </p>
+      </div>
+
+      {/* The Motion Engine */}
+      <section>
+        <h3
+          className="mb-3 text-lg font-bold text-[#D36A18]"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          The Motion Engine: Gemini Veo
+        </h3>
+        <div className="space-y-3">
+          <div className="rounded-xl border border-gray-200 bg-white p-5">
+            <p
+              className="text-sm leading-relaxed text-gray-600"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              Feed your finished 9:16 image directly into Gemini Veo as a{" "}
+              <span className="font-semibold text-[#2C2621]">reference seed</span>.
+              This locks the character&apos;s visual identity — color, shape, and
+              style — so every frame of video stays on-model without any
+              additional prompting.
+            </p>
+          </div>
+          <div className="rounded-xl border border-gray-200 bg-white p-5">
+            <p
+              className="mb-2 font-semibold text-[#2C2621]"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              The Motion Prompt Rule
+            </p>
+            <p
+              className="text-sm leading-relaxed text-gray-600"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              Your prompt should describe{" "}
+              <span className="font-semibold text-[#2C2621]">only movement</span>,
+              never re-describe the character. Veo already knows what it looks
+              like. Focus on camera behavior and physical action.
+            </p>
+            <div className="mt-3 rounded-lg border border-gray-200 bg-gray-50 p-4 font-mono text-xs text-gray-600">
+              <p className="text-[#D36A18]">{"// Example motion prompt"}</p>
+              <p className="mt-1">
+                &ldquo;Cinematic camera push-in. High-pressure tap water violently
+                splashes against a ceramic surface, sending droplets in every
+                direction. Slow motion. Natural lighting.&rdquo;
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Voice */}
+      <section>
+        <h3
+          className="mb-3 text-lg font-bold text-[#D36A18]"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          The Voice: ElevenLabs
+        </h3>
+        <div className="space-y-3">
+          <div className="rounded-xl border border-gray-200 bg-white p-5">
+            <p
+              className="text-sm leading-relaxed text-gray-600"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              Choose a voice with a{" "}
+              <span className="font-semibold text-[#2C2621]">
+                fast-paced, documentary energy
+              </span>{" "}
+              — think National Geographic narrator, not audiobook. The cadence
+              should feel urgent and authoritative, not warm and conversational.
+            </p>
+          </div>
+          <div className="rounded-xl border border-gray-200 bg-white p-5">
+            <p
+              className="mb-2 font-semibold text-[#2C2621]"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              The Cadence Hack
+            </p>
+            <p
+              className="text-sm leading-relaxed text-gray-600"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              After generating your audio, speed it up by{" "}
+              <span className="font-semibold text-[#2C2621]">1.1× to 1.15×</span>{" "}
+              in your editor. This sits below the threshold where listeners
+              consciously notice the speed, but creates a subtle sense of momentum
+              that reduces drop-off by keeping the brain slightly ahead of the
+              voice.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Action item */}
+      <div className="rounded-xl border border-[#D36A18]/30 bg-[#D36A18]/10 p-5">
+        <label className="flex cursor-pointer items-start gap-3">
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={(e) => setChecked(e.target.checked)}
+            className="mt-0.5 h-5 w-5 shrink-0 accent-[#D36A18]"
+          />
+          <span
+            className={`text-sm leading-relaxed ${checked ? "text-gray-400 line-through" : "text-gray-700"}`}
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            <span className="font-semibold text-[#2C2621]">Action Item:</span>{" "}
+            Generate a motion clip for your hero scene using a movement-only
+            prompt. Then record your script in ElevenLabs and speed the export
+            up by 1.1× before importing it into your editor.
+          </span>
+        </label>
+      </div>
+    </div>
+  );
+}
+
+// ─── Module 4 ─────────────────────────────────────────────────────────────────
+
+function Module4() {
+  const [checked, setChecked] = useState(false);
+
+  return (
+    <div className="space-y-8">
+      <div>
+        <h2
+          className="mb-1 text-2xl font-extrabold text-[#2C2621] sm:text-3xl"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          The Final Assembly (Editing for Retention)
+        </h2>
+        <p
+          className="text-sm text-gray-400"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          Module 4 of 5
+        </p>
+      </div>
+
+      {/* Zero Dead Air */}
+      <section>
+        <h3
+          className="mb-3 text-lg font-bold text-[#D36A18]"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          The Zero Dead Air Rule
+        </h3>
+        <div className="rounded-xl border border-gray-200 bg-white p-5">
+          <p
+            className="text-sm leading-relaxed text-gray-600"
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            Open your audio waveform and cut{" "}
+            <span className="font-semibold text-[#2C2621]">every micro-pause</span>{" "}
+            — any silence longer than roughly 0.1 seconds gets removed. This
+            sounds extreme, but the result is a wall of forward momentum. The
+            viewer&apos;s brain never gets a gap to decide to scroll away. Most
+            editing tools have a &ldquo;remove silence&rdquo; or &ldquo;auto-cut&rdquo; feature that
+            handles this in one click.
+          </p>
+        </div>
+      </section>
+
+      {/* Matching Audio to Video */}
+      <section>
+        <h3
+          className="mb-3 text-lg font-bold text-[#D36A18]"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          Matching Audio to Video
+        </h3>
+        <div className="rounded-xl border border-gray-200 bg-white p-5">
+          <p
+            className="text-sm leading-relaxed text-gray-600"
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            Every visual action should land on the exact word that describes it.
+            If the script says &ldquo;water splashes&rdquo; the splash must hit on
+            &ldquo;splashes&rdquo;, not a half-second before or after. This{" "}
+            <span className="font-semibold text-[#2C2621]">audio-visual sync</span>{" "}
+            is what makes a video feel polished and professionally produced — it
+            triggers the same neural reward as a perfectly synced music video.
+            Trim or extend your video clips at the cut points until the sync is
+            frame-accurate.
+          </p>
+        </div>
+      </section>
+
+      {/* Captions and Visual Anchors */}
+      <section>
+        <h3
+          className="mb-3 text-lg font-bold text-[#D36A18]"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          Captions and Visual Anchors
+        </h3>
+        <div className="space-y-3">
+          <div className="rounded-xl border border-gray-200 bg-white p-5">
+            <p
+              className="text-sm leading-relaxed text-gray-600"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              Use{" "}
+              <span className="font-semibold text-[#2C2621]">
+                bold, center-aligned captions
+              </span>{" "}
+              that auto-highlight the active word. Viewers who watch on mute
+              (a significant portion on TikTok and Reels) should be able to
+              follow every beat of the script without audio.
+            </p>
+          </div>
+          <div className="rounded-xl border border-gray-200 bg-white p-5">
+            <p
+              className="mb-2 font-semibold text-[#2C2621]"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              Safe Zones
+            </p>
+            <p
+              className="text-sm leading-relaxed text-gray-600"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              Keep all text and UI elements within the{" "}
+              <span className="font-semibold text-[#2C2621]">
+                center 80% of the frame
+              </span>
+              . The top and bottom edges are cropped or covered by platform UI
+              (profile info, like buttons, captions) on every major app. Anything
+              outside the safe zone is invisible to most viewers.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Action item */}
+      <div className="rounded-xl border border-[#D36A18]/30 bg-[#D36A18]/10 p-5">
+        <label className="flex cursor-pointer items-start gap-3">
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={(e) => setChecked(e.target.checked)}
+            className="mt-0.5 h-5 w-5 shrink-0 accent-[#D36A18]"
+          />
+          <span
+            className={`text-sm leading-relaxed ${checked ? "text-gray-400 line-through" : "text-gray-700"}`}
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            <span className="font-semibold text-[#2C2621]">Action Item:</span>{" "}
+            Assemble your first full cut. Run the remove-silence tool, manually
+            sync one audio-visual moment frame-accurately, then export with
+            center-aligned captions enabled.
+          </span>
+        </label>
+      </div>
+    </div>
+  );
+}
+
+// ─── Module 5 ─────────────────────────────────────────────────────────────────
+
+function Module5() {
+  const [checked, setChecked] = useState(false);
+
+  const nicheExamples = [
+    {
+      emoji: "💰",
+      niche: "Finance",
+      example: "3D wallet warning about hidden bank fees",
+    },
+    {
+      emoji: "📡",
+      niche: "Tech",
+      example: "3D router explaining why your Wi-Fi is slow",
+    },
+    {
+      emoji: "🏃",
+      niche: "Fitness",
+      example: "3D running shoe explaining the cause of shin splints",
+    },
+  ];
+
+  return (
+    <div className="space-y-8">
+      <div>
+        <h2
+          className="mb-1 text-2xl font-extrabold text-[#2C2621] sm:text-3xl"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          The Secret Sauce (The Creative Edge)
+        </h2>
+        <p
+          className="text-sm text-gray-400"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          Module 5 of 5
+        </p>
+      </div>
+
+      {/* Execution > Tools */}
+      <section>
+        <h3
+          className="mb-3 text-lg font-bold text-[#D36A18]"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          Execution &gt; Tools
+        </h3>
+        <div className="space-y-3">
+          <div className="rounded-xl border border-gray-200 bg-white p-5">
+            <p
+              className="mb-2 font-semibold text-[#2C2621]"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              The Fear / Relief Metric
+            </p>
+            <p
+              className="text-sm leading-relaxed text-gray-600"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              Every viral edutainment video follows the same emotional arc:
+              introduce a{" "}
+              <span className="font-semibold text-[#2C2621]">hidden danger</span>{" "}
+              the viewer didn&apos;t know about, then immediately hand them a{" "}
+              <span className="font-semibold text-[#2C2621]">
+                cheap, specific solution
+              </span>
+              . The gap between fear and relief is where the save and share
+              happens. If your video doesn&apos;t create that gap, it&apos;s just
+              information — not content.
+            </p>
+          </div>
+          <div className="rounded-xl border border-gray-200 bg-white p-5">
+            <p
+              className="mb-2 font-semibold text-[#2C2621]"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              Saveable Utility
+            </p>
+            <p
+              className="text-sm leading-relaxed text-gray-600"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              Generic advice gets watched. Specific recipes get saved. Instead
+              of &ldquo;wash your produce&rdquo;, give them{" "}
+              <span className="font-semibold text-[#2C2621]">
+                a ratio, a time, and a reason
+              </span>{" "}
+              — &ldquo;1 part white vinegar to 3 parts water, soak for 15 minutes,
+              removes 98% of surface pesticides.&rdquo; Specificity is the algorithm
+              signal. It tells the platform this content is worth recommending.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Finding Your Niche */}
+      <section>
+        <h3
+          className="mb-3 text-lg font-bold text-[#D36A18]"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          Finding Your Niche
+        </h3>
+        <p
+          className="mb-3 text-sm leading-relaxed text-gray-600"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          The talking-object format works in any niche where everyday items
+          carry hidden knowledge. The character becomes a metaphor — and
+          metaphors are more memorable than facts.
+        </p>
+        <div className="space-y-3">
+          {nicheExamples.map(({ emoji, niche, example }) => (
+            <div
+              key={niche}
+              className="flex items-start gap-4 rounded-xl border border-gray-200 bg-white p-4"
+            >
+              <span className="text-2xl">{emoji}</span>
+              <div>
+                <p
+                  className="font-semibold text-[#2C2621]"
+                  style={{ fontFamily: "var(--font-montserrat)" }}
+                >
+                  {niche}
+                </p>
+                <p
+                  className="mt-0.5 text-sm text-gray-500"
+                  style={{ fontFamily: "var(--font-open-sans)" }}
+                >
+                  {example}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Action item */}
+      <div className="rounded-xl border border-[#D36A18]/30 bg-[#D36A18]/10 p-5">
+        <label className="flex cursor-pointer items-start gap-3">
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={(e) => setChecked(e.target.checked)}
+            className="mt-0.5 h-5 w-5 shrink-0 accent-[#D36A18]"
+          />
+          <span
+            className={`text-sm leading-relaxed ${checked ? "text-gray-400 line-through" : "text-gray-700"}`}
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            <span className="font-semibold text-[#2C2621]">Action Item:</span>{" "}
+            Write the Fear/Relief arc for your next video in two sentences —
+            one for the hidden danger, one for the specific solution. Then pick
+            your niche character and start your next script.
+          </span>
+        </label>
+      </div>
+    </div>
+  );
+}
+
 // ─── Lock Icon ────────────────────────────────────────────────────────────────
 
 function LockIcon({ className }: { className?: string }) {
@@ -509,6 +951,9 @@ export default function DashboardClient({ initialUnlocked, sessionId }: Dashboar
           <div className="mx-auto max-w-2xl">
             {activeModule === 1 && <Module1 />}
             {activeModule === 2 && <Module2 />}
+            {activeModule === 3 && <Module3 />}
+            {activeModule === 4 && <Module4 />}
+            {activeModule === 5 && <Module5 />}
           </div>
         </main>
       </div>
