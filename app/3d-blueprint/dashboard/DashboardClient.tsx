@@ -356,11 +356,22 @@ function Module1() {
   );
 }
 
+const PROMPT_ANATOMY = `[Character description] doing [action], [environment / background], [lighting style], [camera angle], ultra-detailed, 3D render, cinematic, "Sausage Party" Pixar adult animation style. --ar 9:16`;
+
 function Module2() {
   const [checked, setChecked] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  function handleCopy() {
+    navigator.clipboard.writeText(PROMPT_ANATOMY);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
 
   return (
     <div className="space-y-8">
+
+      {/* ── 1. Intro ── */}
       <div>
         <h2
           className="mb-1 text-2xl font-extrabold text-[#2C2621] sm:text-3xl"
@@ -374,97 +385,170 @@ function Module2() {
         >
           Module 2 of 5
         </p>
+        <p
+          className="mt-4 text-sm leading-relaxed text-gray-600"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          You have your viral script and your scene descriptions from Module 1.
+          Now, we turn those words into world-class 3D assets. Every single
+          scene in your video needs a foundational &ldquo;Hero Image.&rdquo;
+        </p>
       </div>
 
-      {/* Generating Base Assets */}
+      {/* ── 2. The Tool ── */}
       <section>
         <h3
-          className="mb-3 text-lg font-bold text-[#D36A18]"
+          className="text-lg font-bold text-[#D36A18] mt-8 mb-3"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
-          Generating the Base Assets
+          The Tool: Nano Banana 2 (Gemini 3 Flash Image)
         </h3>
         <div className="rounded-xl border border-gray-200 bg-white p-5">
           <p
             className="text-sm leading-relaxed text-gray-600"
             style={{ fontFamily: "var(--font-open-sans)" }}
           >
-            Every scene starts with a single hero image. Use your master prompt
-            template from Module 1, feed it into your image AI of choice, and
-            generate 4–8 variants per scene. Pick the one that best matches your
-            storyboard and lock in the character&apos;s core look before moving on.
+            Do not waste time jumping between random AI generators. To get this
+            highly specific, Pixar-quality 3D look with cinematic lighting, I
+            use <strong className="text-[#2C2621]">Nano Banana 2</strong>{" "}
+            (officially known as Gemini 3 Flash Image). It is the industry
+            standard for generating expressive, anthropomorphic characters and
+            handling complex textures (like water and mold) in the same frame.
           </p>
         </div>
       </section>
 
-      {/* Golden Rule */}
+      {/* ── 3. The Result ── */}
       <section>
         <h3
-          className="mb-3 text-lg font-bold text-[#D36A18]"
+          className="text-lg font-bold text-[#D36A18] mt-8 mb-3"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          The Result (Raw &amp; Unedited)
+        </h3>
+        <p
+          className="text-sm leading-relaxed text-gray-600 mb-4"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          When you plug the exact Image Prompt from our Blueberry Swipe File in
+          Module 1 into Nano Banana 2, this is the exact, unedited result it
+          spits out:
+        </p>
+        <img
+          src="/output.png"
+          alt="Raw AI Output"
+          className="w-full h-auto max-w-lg rounded-xl shadow-lg border border-gray-200"
+        />
+      </section>
+
+      {/* ── 4. The Golden Rule ── */}
+      <section>
+        <h3
+          className="text-lg font-bold text-[#D36A18] mt-8 mb-3"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
           The Golden Rule: Aspect Ratio
         </h3>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-          {[
-            { ratio: "9:16", label: "TikTok / Reels / Shorts", highlight: true },
-            { ratio: "1:1", label: "Instagram Feed", highlight: false },
-            { ratio: "16:9", label: "YouTube Standard", highlight: false },
-          ].map(({ ratio, label, highlight }) => (
-            <div
-              key={ratio}
-              className={`rounded-xl border p-4 text-center ${highlight ? "border-[#D36A18] bg-[#D36A18]/10" : "border-gray-200 bg-white"}`}
+        <p
+          className="text-sm leading-relaxed text-gray-600 mb-4"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          Because we are optimizing for TikTok, Instagram Reels, and YouTube
+          Shorts, your images <strong className="text-[#2C2621]">must</strong>{" "}
+          fill a vertical phone screen perfectly. If you generate a square or
+          horizontal image, our Motion Engine (Module 3) will crop it awkwardly,
+          ruining your resolution and cutting off your character.{" "}
+          <strong className="text-[#2C2621]">
+            Always type{" "}
+            <span className="font-mono">--ar 9:16</span> at the absolute end of
+            every single prompt.
+          </strong>
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {/* 9:16 — highlighted */}
+          <div className="border-2 border-[#D36A18] bg-[#D36A18]/10 p-4 rounded-xl text-center relative overflow-hidden">
+            <p
+              className="text-2xl font-extrabold text-[#D36A18]"
+              style={{ fontFamily: "var(--font-montserrat)" }}
             >
-              <p
-                className={`text-xl font-extrabold ${highlight ? "text-[#D36A18]" : "text-[#2C2621]"}`}
-                style={{ fontFamily: "var(--font-montserrat)" }}
-              >
-                {ratio}
-              </p>
-              <p
-                className="mt-1 text-xs text-gray-500"
-                style={{ fontFamily: "var(--font-open-sans)" }}
-              >
-                {label}
-              </p>
-            </div>
-          ))}
+              9:16
+            </p>
+            <p
+              className="text-xs text-gray-600 font-bold mt-1"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              TikTok / Reels / Shorts
+            </p>
+            <p
+              className="text-xs font-bold text-[#D36A18] mt-2"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              👈 USE THIS
+            </p>
+          </div>
+          {/* 1:1 — muted */}
+          <div className="border border-gray-200 bg-gray-50 p-4 rounded-xl text-center opacity-70">
+            <p
+              className="text-2xl font-bold text-gray-400"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              1:1
+            </p>
+            <p
+              className="text-xs text-gray-400 mt-1"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              Instagram Feed
+            </p>
+          </div>
+          {/* 16:9 — muted */}
+          <div className="border border-gray-200 bg-gray-50 p-4 rounded-xl text-center opacity-70">
+            <p
+              className="text-2xl font-bold text-gray-400"
+              style={{ fontFamily: "var(--font-montserrat)" }}
+            >
+              16:9
+            </p>
+            <p
+              className="text-xs text-gray-400 mt-1"
+              style={{ fontFamily: "var(--font-open-sans)" }}
+            >
+              YouTube Standard / Desktop
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Output image */}
-      <div className="overflow-hidden rounded-xl border border-gray-200">
-        <img
-          src="/output.png"
-          alt="Asset generation output"
-          className="w-full h-auto rounded-xl shadow-lg border border-gray-200"
-        />
-      </div>
-
-      {/* Prompt Framework */}
+      {/* ── 5. Prompt Anatomy ── */}
       <section>
         <h3
-          className="mb-3 text-lg font-bold text-[#D36A18]"
+          className="text-lg font-bold text-[#D36A18] mt-8 mb-3"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
-          The Prompt Framework
+          The Prompt Anatomy
         </h3>
-        <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 font-mono text-sm">
-          <p className="text-[#D36A18]">{"// Scene Prompt Template"}</p>
-          <p className="mt-2 text-gray-600">
-            [
-            <span className="text-[#2C2621]">Character description</span>] doing [
-            <span className="text-[#2C2621]">action</span>], [
-            <span className="text-[#2C2621]">environment</span>], [
-            <span className="text-[#2C2621]">lighting style</span>], [
-            <span className="text-[#2C2621]">camera angle</span>], ultra-detailed,
-            3D render, cinematic.
-          </p>
+        <p
+          className="text-sm leading-relaxed text-gray-600"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          If you ever need to manually tweak a scene or build a new character
+          from scratch, do not just type a random sentence. Use this locked
+          variable structure to guarantee a cinematic result every time.
+        </p>
+        <div className="bg-gray-900 text-gray-100 font-mono text-sm rounded-xl p-5 relative mt-4 shadow-lg leading-relaxed">
+          <button
+            onClick={handleCopy}
+            className="absolute right-3 top-3 rounded-md bg-white/10 px-3 py-1 text-xs font-semibold text-white transition hover:bg-white/20"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+          >
+            {copied ? "Copied!" : "Copy"}
+          </button>
+          <p className="pr-16 text-gray-300">{PROMPT_ANATOMY}</p>
         </div>
       </section>
 
-      {/* Action item */}
-      <div className="rounded-xl border border-[#D36A18]/30 bg-[#D36A18]/10 p-5">
+      {/* ── 6. Action Item ── */}
+      <div className="rounded-xl border border-[#D36A18]/30 bg-[#D36A18]/10 p-5 mt-8">
         <label className="flex cursor-pointer items-start gap-3">
           <input
             type="checkbox"
@@ -477,8 +561,10 @@ function Module2() {
             style={{ fontFamily: "var(--font-open-sans)" }}
           >
             <span className="font-semibold text-[#2C2621]">Action Item:</span>{" "}
-            Generate your first batch of scene assets using the prompt framework
-            above. Aim for 3 distinct scenes using the same base character.
+            Open Nano Banana 2 (Gemini). Paste your 3 scene descriptions from
+            Module 1 to generate your foundational assets. Generate 4–8 variants
+            per scene, pick the best one for each, and download them to your
+            device.
           </span>
         </label>
       </div>
