@@ -574,11 +574,22 @@ function Module2() {
 
 // ─── Module 3 ─────────────────────────────────────────────────────────────────
 
+const VEO_PROMPT = `Cinematic camera push-in. High-pressure tap water violently splashes over the character and against the ceramic surface, sending hyper-realistic water droplets bouncing in every direction. Slow motion. Natural lighting.`;
+
 function Module3() {
   const [checked, setChecked] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  function handleCopy() {
+    navigator.clipboard.writeText(VEO_PROMPT);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
 
   return (
     <div className="space-y-8">
+
+      {/* ── 1. Intro ── */}
       <div>
         <h2
           className="mb-1 text-2xl font-extrabold text-[#2C2621] sm:text-3xl"
@@ -592,103 +603,159 @@ function Module3() {
         >
           Module 3 of 5
         </p>
+        <p
+          className="mt-4 text-sm leading-relaxed text-gray-600"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          Welcome to the premium workflow. You now have your viral script and
+          your high-quality 9:16 assets. Most creators stop here and post a
+          slideshow. We don&apos;t. We are going to use two specific AI engines
+          to create cinematic motion and high-retention audio.
+        </p>
       </div>
 
-      {/* The Motion Engine */}
+      {/* ── 2. Part 1: Motion Engine ── */}
       <section>
         <h3
-          className="mb-3 text-lg font-bold text-[#D36A18]"
+          className="text-xl font-bold text-[#D36A18] mt-8 mb-4"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
-          The Motion Engine: Gemini Veo
+          Part 1: The Motion Engine (Gemini Veo)
         </h3>
-        <div className="space-y-3">
-          <div className="rounded-xl border border-gray-200 bg-white p-5">
-            <p
-              className="text-sm leading-relaxed text-gray-600"
-              style={{ fontFamily: "var(--font-open-sans)" }}
+        <p
+          className="text-sm leading-relaxed text-gray-600 mb-4"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          Static images get swiped. Dynamic movement forces the algorithm to
+          recognize your content as high-effort video. We use{" "}
+          <strong className="text-[#2C2621]">Gemini Veo</strong> because it has
+          the best physics engine for fluid dynamics (like splashing water) and
+          camera control.
+        </p>
+        <p
+          className="font-bold text-[#2C2621] mb-2"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          The &ldquo;Seed Image&rdquo; Workflow:
+        </p>
+        <div>
+          {[
+            <>Do <strong className="text-[#2C2621]">not</strong> use Veo to generate a video from scratch.</>,
+            <>Upload your finished 9:16 image from Module 2 directly into Veo as a <strong className="text-[#2C2621]">Reference Image</strong> (often called the &ldquo;seed&rdquo;).</>,
+            <><em>Why?</em> This locks in your character&apos;s exact visual identity. Veo will use that exact image as the first frame of the video, ensuring the character doesn&apos;t mutate or change style as it moves.</>,
+          ].map((content, i) => (
+            <div
+              key={i}
+              className="bg-white border border-gray-200 rounded-xl p-4 mb-2 flex gap-4"
             >
-              Feed your finished 9:16 image directly into Gemini Veo as a{" "}
-              <span className="font-semibold text-[#2C2621]">reference seed</span>.
-              This locks the character&apos;s visual identity — color, shape, and
-              style — so every frame of video stays on-model without any
-              additional prompting.
-            </p>
-          </div>
-          <div className="rounded-xl border border-gray-200 bg-white p-5">
-            <p
-              className="mb-2 font-semibold text-[#2C2621]"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              The Motion Prompt Rule
-            </p>
-            <p
-              className="text-sm leading-relaxed text-gray-600"
-              style={{ fontFamily: "var(--font-open-sans)" }}
-            >
-              Your prompt should describe{" "}
-              <span className="font-semibold text-[#2C2621]">only movement</span>,
-              never re-describe the character. Veo already knows what it looks
-              like. Focus on camera behavior and physical action.
-            </p>
-            <div className="mt-3 rounded-lg border border-gray-200 bg-gray-50 p-4 font-mono text-xs text-gray-600">
-              <p className="text-[#D36A18]">{"// Example motion prompt"}</p>
-              <p className="mt-1">
-                &ldquo;Cinematic camera push-in. High-pressure tap water violently
-                splashes against a ceramic surface, sending droplets in every
-                direction. Slow motion. Natural lighting.&rdquo;
+              <span
+                className="bg-[#D36A18] text-white rounded-full h-7 w-7 flex items-center justify-center font-bold shrink-0 text-sm mt-0.5"
+                style={{ fontFamily: "var(--font-montserrat)" }}
+              >
+                {i + 1}
+              </span>
+              <p
+                className="text-sm leading-relaxed text-gray-600"
+                style={{ fontFamily: "var(--font-open-sans)" }}
+              >
+                {content}
               </p>
             </div>
-          </div>
+          ))}
         </div>
-      </section>
 
-      {/* The Voice */}
-      <section>
-        <h3
-          className="mb-3 text-lg font-bold text-[#D36A18]"
+        {/* Warning callout */}
+        <div className="border-l-4 border-red-500 bg-red-50 p-5 rounded-r-xl my-6">
+          <p
+            className="font-bold text-red-700 mb-1"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+          >
+            ⚠️ The &ldquo;Motion Only&rdquo; Prompt Rule
+          </p>
+          <p
+            className="text-red-900/80 text-sm leading-relaxed"
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            This is where most beginners fail. Because Veo already has your
+            image, your prompt should{" "}
+            <strong>never re-describe the character</strong>. If you do, the AI
+            gets confused and the character will warp. You must only describe{" "}
+            <em>how the camera moves</em> and{" "}
+            <em>what physical actions happen</em>.
+          </p>
+        </div>
+
+        {/* Veo terminal */}
+        <p
+          className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
-          The Voice: ElevenLabs
-        </h3>
-        <div className="space-y-3">
-          <div className="rounded-xl border border-gray-200 bg-white p-5">
-            <p
-              className="text-sm leading-relaxed text-gray-600"
-              style={{ fontFamily: "var(--font-open-sans)" }}
-            >
-              Choose a voice with a{" "}
-              <span className="font-semibold text-[#2C2621]">
-                fast-paced, documentary energy
-              </span>{" "}
-              — think National Geographic narrator, not audiobook. The cadence
-              should feel urgent and authoritative, not warm and conversational.
-            </p>
-          </div>
-          <div className="rounded-xl border border-gray-200 bg-white p-5">
-            <p
-              className="mb-2 font-semibold text-[#2C2621]"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              The Cadence Hack
-            </p>
-            <p
-              className="text-sm leading-relaxed text-gray-600"
-              style={{ fontFamily: "var(--font-open-sans)" }}
-            >
-              After generating your audio, speed it up by{" "}
-              <span className="font-semibold text-[#2C2621]">1.1× to 1.15×</span>{" "}
-              in your editor. This sits below the threshold where listeners
-              consciously notice the speed, but creates a subtle sense of momentum
-              that reduces drop-off by keeping the brain slightly ahead of the
-              voice.
-            </p>
-          </div>
+          👇 COPY THIS VEO MOTION PROMPT:
+        </p>
+        <div className="bg-gray-900 text-gray-100 font-mono text-sm rounded-xl p-5 relative shadow-lg leading-relaxed mb-8">
+          <button
+            onClick={handleCopy}
+            className="absolute right-3 top-3 rounded-md bg-white/10 px-3 py-1 text-xs font-semibold text-white transition hover:bg-white/20"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+          >
+            {copied ? "Copied!" : "Copy"}
+          </button>
+          <p className="pr-16 text-gray-300">{VEO_PROMPT}</p>
         </div>
       </section>
 
-      {/* Action item */}
-      <div className="rounded-xl border border-[#D36A18]/30 bg-[#D36A18]/10 p-5">
+      {/* ── 3. Part 2: The Voice ── */}
+      <section>
+        <h3
+          className="text-xl font-bold text-[#D36A18] mt-8 mb-4"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          Part 2: The Voice (ElevenLabs)
+        </h3>
+        <p
+          className="text-sm leading-relaxed text-gray-600 mb-4"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          Your visuals hook them, but the voiceover dictates the pacing and
+          determines if they actually watch until the end. Do not use standard
+          TikTok robotic voices. We use{" "}
+          <strong className="text-[#2C2621]">ElevenLabs</strong> because it
+          produces the most natural, hyper-realistic AI voices on the market.
+        </p>
+        <div>
+          {[
+            {
+              title: `The "Documentary" Setting`,
+              body: `When selecting your voice model, look for descriptors like Energetic, Authoritative, or Fast-paced. You want the energy of a National Geographic narrator exposing a massive secret, not someone reading a relaxing audiobook.`,
+            },
+            {
+              title: "The Psychological Cadence Hack",
+              body: `The modern short-form audience has zero patience. If your audio breathes or pauses, they swipe. Generate your script in ElevenLabs and download the MP3. When you drop that audio into your editing software, immediately speed it up by 1.1x to 1.15x. This specific speed sits right below the threshold where it sounds "chipmunk-y," but it creates a massive sense of subconscious urgency.`,
+            },
+          ].map(({ title, body }) => (
+            <div
+              key={title}
+              className="bg-gray-50 border border-gray-200 rounded-xl p-5 mb-4"
+            >
+              <p
+                className="font-bold text-[#2C2621] mb-2"
+                style={{ fontFamily: "var(--font-montserrat)" }}
+              >
+                {title}
+              </p>
+              <p
+                className="text-sm leading-relaxed text-gray-600"
+                style={{ fontFamily: "var(--font-open-sans)" }}
+              >
+                {body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 4. Action Item ── */}
+      <div className="rounded-xl border border-[#D36A18]/30 bg-[#D36A18]/10 p-5 mt-8">
         <label className="flex cursor-pointer items-start gap-3">
           <input
             type="checkbox"
@@ -701,9 +768,10 @@ function Module3() {
             style={{ fontFamily: "var(--font-open-sans)" }}
           >
             <span className="font-semibold text-[#2C2621]">Action Item:</span>{" "}
-            Generate a motion clip for your hero scene using a movement-only
-            prompt. Then record your script in ElevenLabs and speed the export
-            up by 1.1× before importing it into your editor.
+            Upload your 3 scene images into Gemini Veo and generate your motion
+            clips using the &ldquo;Motion Only&rdquo; rule. Then, drop your script into
+            ElevenLabs, find a high-energy voice, and download the MP3. You are
+            now ready for the Final Edit.
           </span>
         </label>
       </div>
