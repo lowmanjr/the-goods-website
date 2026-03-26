@@ -10,10 +10,10 @@ export async function verifyStripeSession(sessionId: string): Promise<boolean> {
 
     if (session.payment_status === "paid") {
       const cookieStore = await cookies();
-      cookieStore.set("blueprint_unlocked", "true", {
+      cookieStore.set("vip_access", "true", {
         httpOnly: true,
         secure: true,
-        maxAge: 31536000,
+        maxAge: 60 * 60 * 24 * 365,
       });
 
       const customerEmail = session.customer_details?.email;
