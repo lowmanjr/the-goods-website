@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -33,17 +32,17 @@ function PaywallModal({ onClose }: { onClose: () => void }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-md rounded-2xl border border-white/10 bg-[#141414] p-8 shadow-2xl"
+        className="relative w-full max-w-md rounded-2xl border border-gray-200 bg-white p-8 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white/60 transition hover:bg-white/20 hover:text-white"
+          className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-gray-400 transition hover:bg-gray-200 hover:text-gray-600"
           aria-label="Close"
         >
           ✕
@@ -55,26 +54,26 @@ function PaywallModal({ onClose }: { onClose: () => void }) {
         </div>
 
         <h2
-          className="mb-3 text-2xl font-extrabold text-white"
+          className="mb-3 text-2xl font-extrabold text-[#2C2621]"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
           Make It Go Viral
         </h2>
 
         <p
-          className="mb-6 text-sm leading-relaxed text-white/60"
+          className="mb-6 text-sm leading-relaxed text-gray-500"
           style={{ fontFamily: "var(--font-open-sans)" }}
         >
           An image is just an image, but motion is what holds attention for an
           average of{" "}
-          <span className="font-semibold text-white">21 seconds</span> and
+          <span className="font-semibold text-[#2C2621]">21 seconds</span> and
           triggers the algorithm to push your video to millions.
         </p>
 
         {/* Feature list */}
         <ul className="mb-7 space-y-2">
           {features.map((f) => (
-            <li key={f} className="flex items-center gap-2 text-sm text-white/80">
+            <li key={f} className="flex items-center gap-2 text-sm text-gray-700">
               <span className="text-[#D36A18]">✦</span>
               {f}
             </li>
@@ -90,7 +89,7 @@ function PaywallModal({ onClose }: { onClose: () => void }) {
         </a>
 
         <p
-          className="mt-3 text-center text-xs text-white/30"
+          className="mt-3 text-center text-xs text-gray-400"
           style={{ fontFamily: "var(--font-open-sans)" }}
         >
           One-time payment · Instant access
@@ -109,13 +108,13 @@ function Module1() {
     <div className="space-y-8">
       <div>
         <h2
-          className="mb-1 text-2xl font-extrabold text-white sm:text-3xl"
+          className="mb-1 text-2xl font-extrabold text-[#2C2621] sm:text-3xl"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
           The Plug-and-Play AI Blueprint
         </h2>
         <p
-          className="text-sm text-white/40"
+          className="text-sm text-gray-400"
           style={{ fontFamily: "var(--font-open-sans)" }}
         >
           Module 1 of 5
@@ -150,7 +149,7 @@ function Module1() {
           ].map(({ step, label, desc }) => (
             <div
               key={step}
-              className="flex gap-4 rounded-xl border border-white/5 bg-white/5 p-4"
+              className="flex gap-4 rounded-xl border border-gray-200 bg-white p-4"
             >
               <span
                 className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#D36A18] text-sm font-bold text-white"
@@ -160,13 +159,13 @@ function Module1() {
               </span>
               <div>
                 <p
-                  className="font-semibold text-white"
+                  className="font-semibold text-[#2C2621]"
                   style={{ fontFamily: "var(--font-montserrat)" }}
                 >
                   {label}
                 </p>
                 <p
-                  className="mt-0.5 text-sm text-white/50"
+                  className="mt-0.5 text-sm text-gray-500"
                   style={{ fontFamily: "var(--font-open-sans)" }}
                 >
                   {desc}
@@ -178,13 +177,11 @@ function Module1() {
       </section>
 
       {/* Process image */}
-      <div className="overflow-hidden rounded-xl border border-white/10">
-        <Image
-          src="/process.JPG"
-          width={700}
-          height={400}
+      <div className="overflow-hidden rounded-xl border border-gray-200">
+        <img
+          src="/process.jpg"
           alt="Blueprint process"
-          className="w-full object-cover"
+          className="w-full h-auto rounded-xl shadow-lg border border-gray-200"
         />
       </div>
 
@@ -196,13 +193,13 @@ function Module1() {
         >
           The Prompt Automation Hack
         </h3>
-        <div className="rounded-xl border border-white/5 bg-white/5 p-5">
+        <div className="rounded-xl border border-gray-200 bg-white p-5">
           <p
-            className="text-sm leading-relaxed text-white/70"
+            className="text-sm leading-relaxed text-gray-600"
             style={{ fontFamily: "var(--font-open-sans)" }}
           >
             Instead of writing a new prompt for every scene, build a{" "}
-            <span className="font-semibold text-white">master prompt template</span>{" "}
+            <span className="font-semibold text-[#2C2621]">master prompt template</span>{" "}
             with locked variables (character style, lighting, color palette) and
             only swap the action-specific phrase. This cuts generation time by
             ~70% and keeps every scene visually consistent.
@@ -220,10 +217,10 @@ function Module1() {
             className="mt-0.5 h-5 w-5 shrink-0 accent-[#D36A18]"
           />
           <span
-            className={`text-sm leading-relaxed ${checked ? "text-white/40 line-through" : "text-white/80"}`}
+            className={`text-sm leading-relaxed ${checked ? "text-gray-400 line-through" : "text-gray-700"}`}
             style={{ fontFamily: "var(--font-open-sans)" }}
           >
-            <span className="font-semibold text-white">Action Item:</span> Write
+            <span className="font-semibold text-[#2C2621]">Action Item:</span> Write
             your first Anti-Hook script using the 3-step structure above. Aim
             for under 60 words total — constraint breeds creativity.
           </span>
@@ -240,13 +237,13 @@ function Module2() {
     <div className="space-y-8">
       <div>
         <h2
-          className="mb-1 text-2xl font-extrabold text-white sm:text-3xl"
+          className="mb-1 text-2xl font-extrabold text-[#2C2621] sm:text-3xl"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
           Scene-by-Scene Asset Generation
         </h2>
         <p
-          className="text-sm text-white/40"
+          className="text-sm text-gray-400"
           style={{ fontFamily: "var(--font-open-sans)" }}
         >
           Module 2 of 5
@@ -261,15 +258,15 @@ function Module2() {
         >
           Generating the Base Assets
         </h3>
-        <div className="rounded-xl border border-white/5 bg-white/5 p-5">
+        <div className="rounded-xl border border-gray-200 bg-white p-5">
           <p
-            className="text-sm leading-relaxed text-white/70"
+            className="text-sm leading-relaxed text-gray-600"
             style={{ fontFamily: "var(--font-open-sans)" }}
           >
             Every scene starts with a single hero image. Use your master prompt
             template from Module 1, feed it into your image AI of choice, and
             generate 4–8 variants per scene. Pick the one that best matches your
-            storyboard and lock in the character's core look before moving on.
+            storyboard and lock in the character&apos;s core look before moving on.
           </p>
         </div>
       </section>
@@ -290,16 +287,16 @@ function Module2() {
           ].map(({ ratio, label, highlight }) => (
             <div
               key={ratio}
-              className={`rounded-xl border p-4 text-center ${highlight ? "border-[#D36A18] bg-[#D36A18]/15" : "border-white/5 bg-white/5"}`}
+              className={`rounded-xl border p-4 text-center ${highlight ? "border-[#D36A18] bg-[#D36A18]/10" : "border-gray-200 bg-white"}`}
             >
               <p
-                className={`text-xl font-extrabold ${highlight ? "text-[#D36A18]" : "text-white"}`}
+                className={`text-xl font-extrabold ${highlight ? "text-[#D36A18]" : "text-[#2C2621]"}`}
                 style={{ fontFamily: "var(--font-montserrat)" }}
               >
                 {ratio}
               </p>
               <p
-                className="mt-1 text-xs text-white/50"
+                className="mt-1 text-xs text-gray-500"
                 style={{ fontFamily: "var(--font-open-sans)" }}
               >
                 {label}
@@ -310,13 +307,11 @@ function Module2() {
       </section>
 
       {/* Output image */}
-      <div className="overflow-hidden rounded-xl border border-white/10">
-        <Image
-          src="/output.PNG"
-          width={700}
-          height={400}
+      <div className="overflow-hidden rounded-xl border border-gray-200">
+        <img
+          src="/output.png"
           alt="Asset generation output"
-          className="w-full object-cover"
+          className="w-full h-auto rounded-xl shadow-lg border border-gray-200"
         />
       </div>
 
@@ -328,15 +323,15 @@ function Module2() {
         >
           The Prompt Framework
         </h3>
-        <div className="rounded-xl border border-white/5 bg-[#0A0A0A] p-5 font-mono text-sm">
+        <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 font-mono text-sm">
           <p className="text-[#D36A18]">{"// Scene Prompt Template"}</p>
-          <p className="mt-2 text-white/70">
+          <p className="mt-2 text-gray-600">
             [
-            <span className="text-white">Character description</span>] doing [
-            <span className="text-white">action</span>], [
-            <span className="text-white">environment</span>], [
-            <span className="text-white">lighting style</span>], [
-            <span className="text-white">camera angle</span>], ultra-detailed,
+            <span className="text-[#2C2621]">Character description</span>] doing [
+            <span className="text-[#2C2621]">action</span>], [
+            <span className="text-[#2C2621]">environment</span>], [
+            <span className="text-[#2C2621]">lighting style</span>], [
+            <span className="text-[#2C2621]">camera angle</span>], ultra-detailed,
             3D render, cinematic.
           </p>
         </div>
@@ -352,10 +347,10 @@ function Module2() {
             className="mt-0.5 h-5 w-5 shrink-0 accent-[#D36A18]"
           />
           <span
-            className={`text-sm leading-relaxed ${checked ? "text-white/40 line-through" : "text-white/80"}`}
+            className={`text-sm leading-relaxed ${checked ? "text-gray-400 line-through" : "text-gray-700"}`}
             style={{ fontFamily: "var(--font-open-sans)" }}
           >
-            <span className="font-semibold text-white">Action Item:</span>{" "}
+            <span className="font-semibold text-[#2C2621]">Action Item:</span>{" "}
             Generate your first batch of scene assets using the prompt framework
             above. Aim for 3 distinct scenes using the same base character.
           </span>
@@ -399,12 +394,12 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0D0D0D] text-white">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#2C2621]">
       {/* Top accent bar */}
       <div className="h-1 w-full bg-[#D36A18]" />
 
       {/* Header */}
-      <header className="border-b border-white/5 px-5 py-4">
+      <header className="border-b border-gray-200 px-5 py-4">
         <p
           className="text-xs font-semibold uppercase tracking-widest text-[#D36A18]"
           style={{ fontFamily: "var(--font-montserrat)" }}
@@ -416,10 +411,10 @@ export default function DashboardPage() {
       {/* Layout: stacked on mobile, side-by-side on lg+ */}
       <div className="flex flex-col lg:flex-row lg:min-h-[calc(100vh-57px)]">
         {/* ── Sidebar ── */}
-        <aside className="w-full shrink-0 border-b border-white/5 bg-[#0A0A0A] lg:w-64 lg:border-b-0 lg:border-r">
+        <aside className="w-full shrink-0 border-b border-gray-200 bg-white lg:w-64 lg:border-b-0 lg:border-r">
           <div className="p-4">
             <p
-              className="mb-3 text-[10px] font-semibold uppercase tracking-widest text-white/30"
+              className="mb-3 text-[10px] font-semibold uppercase tracking-widest text-gray-400"
               style={{ fontFamily: "var(--font-montserrat)" }}
             >
               Course Modules
@@ -433,10 +428,10 @@ export default function DashboardPage() {
                     onClick={() => handleModuleClick(mod)}
                     className={`flex w-full items-center gap-3 rounded-lg px-3 py-3 text-left text-sm transition ${
                       isActive
-                        ? "bg-[#D36A18]/20 font-semibold text-[#D36A18]"
+                        ? "bg-[#D36A18]/15 font-semibold text-[#D36A18]"
                         : mod.locked
-                          ? "cursor-pointer text-white/30 hover:bg-white/5 hover:text-white/50"
-                          : "text-white/70 hover:bg-white/5 hover:text-white"
+                          ? "cursor-pointer text-gray-300 hover:bg-gray-100 hover:text-gray-400"
+                          : "text-gray-600 hover:bg-gray-100 hover:text-[#2C2621]"
                     }`}
                     style={{ fontFamily: "var(--font-open-sans)" }}
                   >
@@ -446,8 +441,8 @@ export default function DashboardPage() {
                         isActive
                           ? "bg-[#D36A18] text-white"
                           : mod.locked
-                            ? "bg-white/10 text-white/30"
-                            : "bg-white/10 text-white/60"
+                            ? "bg-gray-100 text-gray-300"
+                            : "bg-gray-100 text-gray-500"
                       }`}
                     >
                       {mod.locked ? (
@@ -471,7 +466,7 @@ export default function DashboardPage() {
                 Unlock All 5 Modules
               </p>
               <p
-                className="mb-3 text-xs text-white/50"
+                className="mb-3 text-xs text-gray-500"
                 style={{ fontFamily: "var(--font-open-sans)" }}
               >
                 Get the motion engine, voice-over system, and viral editing

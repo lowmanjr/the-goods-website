@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -56,13 +55,10 @@ export default function BlueprintSqueezePage() {
 
         {/* Proof image */}
         <div className="mb-10 w-full">
-          <Image
-            src="/proof.PNG"
-            width={600}
-            height={400}
+          <img
+            src="/proof.png"
             alt="Analytics"
-            className="mx-auto rounded-xl shadow-2xl"
-            priority
+            className="mx-auto w-full h-auto rounded-xl shadow-2xl border border-gray-200"
           />
         </div>
 
