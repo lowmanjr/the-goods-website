@@ -786,6 +786,8 @@ function Module4() {
 
   return (
     <div className="space-y-8">
+
+      {/* ── 1. Intro ── */}
       <div>
         <h2
           className="mb-1 text-2xl font-extrabold text-[#2C2621] sm:text-3xl"
@@ -799,104 +801,142 @@ function Module4() {
         >
           Module 4 of 5
         </p>
+        <p
+          className="mt-4 text-sm leading-relaxed text-gray-600"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          You have cinematic visuals and a high-energy voiceover. But if you
+          just slap them together on a timeline, the algorithm will bury your
+          video. This is where the 3.5 million views are actually won or lost.
+          We are going to use <strong className="text-[#2C2621]">CapCut</strong>{" "}
+          to edit specifically for <em>retention</em>—engineering the video so
+          the viewer&apos;s brain never gets a chance to swipe.
+        </p>
       </div>
 
-      {/* Zero Dead Air */}
+      {/* ── 2. Editing Protocol Cards ── */}
       <section>
-        <h3
-          className="mb-3 text-lg font-bold text-[#D36A18]"
-          style={{ fontFamily: "var(--font-montserrat)" }}
-        >
-          The Zero Dead Air Rule
-        </h3>
-        <div className="rounded-xl border border-gray-200 bg-white p-5">
+        {/* Card 1: Zero Dead Air */}
+        <div className="bg-white border border-gray-200 shadow-sm rounded-xl p-6 mb-6">
+          <h3
+            className="text-lg font-bold text-[#D36A18] mb-2"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+          >
+            The &ldquo;Zero Dead Air&rdquo; Protocol
+          </h3>
           <p
-            className="text-sm leading-relaxed text-gray-600"
+            className="text-sm leading-relaxed text-gray-600 mb-2"
             style={{ fontFamily: "var(--font-open-sans)" }}
           >
             Open your audio waveform and cut{" "}
-            <span className="font-semibold text-[#2C2621]">every micro-pause</span>{" "}
-            — any silence longer than roughly 0.1 seconds gets removed. This
-            sounds extreme, but the result is a wall of forward momentum. The
-            viewer&apos;s brain never gets a gap to decide to scroll away. Most
-            editing tools have a &ldquo;remove silence&rdquo; or &ldquo;auto-cut&rdquo; feature that
-            handles this in one click.
+            <strong className="text-[#2C2621]">every single micro-pause</strong>.
+            Any breath or silence longer than 0.1 seconds must be deleted.
           </p>
-        </div>
-      </section>
-
-      {/* Matching Audio to Video */}
-      <section>
-        <h3
-          className="mb-3 text-lg font-bold text-[#D36A18]"
-          style={{ fontFamily: "var(--font-montserrat)" }}
-        >
-          Matching Audio to Video
-        </h3>
-        <div className="rounded-xl border border-gray-200 bg-white p-5">
           <p
-            className="text-sm leading-relaxed text-gray-600"
+            className="text-sm text-gray-600 mb-1"
             style={{ fontFamily: "var(--font-open-sans)" }}
           >
-            Every visual action should land on the exact word that describes it.
-            If the script says &ldquo;water splashes&rdquo; the splash must hit on
-            &ldquo;splashes&rdquo;, not a half-second before or after. This{" "}
-            <span className="font-semibold text-[#2C2621]">audio-visual sync</span>{" "}
-            is what makes a video feel polished and professionally produced — it
-            triggers the same neural reward as a perfectly synced music video.
-            Trim or extend your video clips at the cut points until the sync is
-            frame-accurate.
+            <span className="font-bold text-[#2C2621]">The Psychology:</span>{" "}
+            This sounds extreme, but the result is a wall of relentless forward
+            momentum. The viewer&apos;s brain never gets a microscopic gap to
+            get bored and decide to scroll away.
+          </p>
+          <p
+            className="text-sm text-gray-600"
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            <span className="font-bold text-[#2C2621]">The Hack:</span>{" "}
+            Don&apos;t do this manually. Drop your audio into CapCut, click on
+            the audio clip, and use the &ldquo;Remove Silence&rdquo; or &ldquo;Auto-Cut&rdquo;
+            feature to do this in one click.
+          </p>
+        </div>
+
+        {/* Card 2: Dopamine Sync */}
+        <div className="bg-white border border-gray-200 shadow-sm rounded-xl p-6 mb-6">
+          <h3
+            className="text-lg font-bold text-[#D36A18] mb-2"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+          >
+            The &ldquo;Dopamine Sync&rdquo; (Frame-Accurate Anchoring)
+          </h3>
+          <p
+            className="text-sm leading-relaxed text-gray-600 mb-2"
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            Every visual action must land on the exact syllable that describes
+            it. If the script says <em>&ldquo;water splashes,&rdquo;</em> the splash must
+            hit the berry on the exact frame you hear the &ldquo;spl-&rdquo; sound. Not a
+            half-second before or after.
+          </p>
+          <p
+            className="text-sm text-gray-600"
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            <span className="font-bold text-[#2C2621]">The Psychology:</span>{" "}
+            This audio-visual sync is what makes a video feel incredibly
+            expensive and professionally produced. It triggers the exact same
+            neural reward in the brain as a perfectly synced music video. Trim
+            your video clips at the cut points until the sync is mathematically
+            perfect.
           </p>
         </div>
       </section>
 
-      {/* Captions and Visual Anchors */}
+      {/* ── 3. Mute-Proofing & Safe Zones ── */}
       <section>
         <h3
-          className="mb-3 text-lg font-bold text-[#D36A18]"
+          className="text-xl font-bold text-[#D36A18] mt-8 mb-4"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
-          Captions and Visual Anchors
+          Mute-Proofing &amp; Safe Zones
         </h3>
-        <div className="space-y-3">
-          <div className="rounded-xl border border-gray-200 bg-white p-5">
-            <p
-              className="text-sm leading-relaxed text-gray-600"
-              style={{ fontFamily: "var(--font-open-sans)" }}
-            >
-              Use{" "}
-              <span className="font-semibold text-[#2C2621]">
-                bold, center-aligned captions
-              </span>{" "}
-              that auto-highlight the active word. Viewers who watch on mute
-              (a significant portion on TikTok and Reels) should be able to
-              follow every beat of the script without audio.
-            </p>
-          </div>
-          <div className="rounded-xl border border-gray-200 bg-white p-5">
-            <p
-              className="mb-2 font-semibold text-[#2C2621]"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              Safe Zones
-            </p>
-            <p
-              className="text-sm leading-relaxed text-gray-600"
-              style={{ fontFamily: "var(--font-open-sans)" }}
-            >
-              Keep all text and UI elements within the{" "}
-              <span className="font-semibold text-[#2C2621]">
-                center 80% of the frame
-              </span>
-              . The top and bottom edges are cropped or covered by platform UI
-              (profile info, like buttons, captions) on every major app. Anything
-              outside the safe zone is invisible to most viewers.
-            </p>
-          </div>
+        <p
+          className="text-sm leading-relaxed text-gray-600 mb-4"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          Over 30% of your audience will watch your video on mute while sitting
+          on a train or at work. If they can&apos;t follow the story visually,
+          you lose them.
+        </p>
+
+        <p
+          className="font-bold text-[#2C2621] mb-2"
+          style={{ fontFamily: "var(--font-montserrat)" }}
+        >
+          1. Dynamic Captions
+        </p>
+        <p
+          className="text-sm leading-relaxed text-gray-600 mb-6"
+          style={{ fontFamily: "var(--font-open-sans)" }}
+        >
+          Use bold, center-aligned captions (a thick sans-serif font like{" "}
+          <em>Montserrat</em> or <em>The Bold Font</em>). Set the style to
+          auto-highlight the active word as it is spoken.
+        </p>
+
+        {/* Yellow warning callout */}
+        <div className="border-l-4 border-yellow-500 bg-yellow-50 p-5 rounded-r-xl mb-8">
+          <p
+            className="font-bold text-yellow-800 mb-1"
+            style={{ fontFamily: "var(--font-montserrat)" }}
+          >
+            2. The Center 80% Rule
+          </p>
+          <p
+            className="text-yellow-900/80 text-sm leading-relaxed"
+            style={{ fontFamily: "var(--font-open-sans)" }}
+          >
+            TikTok, Instagram Reels, and YouTube Shorts all cover the right side
+            and bottom of the screen with their own app buttons.{" "}
+            <strong>WARNING:</strong> Keep all text, captions, and important
+            visual assets perfectly centered. Anything placed in the outer
+            margins will be covered up and unreadable.
+          </p>
         </div>
       </section>
 
-      {/* Action item */}
+      {/* ── 4. Action Item ── */}
       <div className="rounded-xl border border-[#D36A18]/30 bg-[#D36A18]/10 p-5">
         <label className="flex cursor-pointer items-start gap-3">
           <input
@@ -910,9 +950,10 @@ function Module4() {
             style={{ fontFamily: "var(--font-open-sans)" }}
           >
             <span className="font-semibold text-[#2C2621]">Action Item:</span>{" "}
-            Assemble your first full cut. Run the remove-silence tool, manually
-            sync one audio-visual moment frame-accurately, then export with
-            center-aligned captions enabled.
+            Open CapCut. Run the &ldquo;Remove Silence&rdquo; tool on your ElevenLabs
+            audio. Frame-sync your Gemini Veo clips to the exact words. Generate
+            dynamic auto-captions, ensure they sit in the center of the screen,
+            and export your final video at 1080p / 60fps.
           </span>
         </label>
       </div>
