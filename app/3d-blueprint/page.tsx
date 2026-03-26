@@ -2,17 +2,22 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { subscribeTo3DBlueprint } from "./actions";
 
 export default function BlueprintSqueezePage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    // TODO: wire up real email capture (MailerLite, etc.)
-    router.push("/3d-blueprint/dashboard");
+    const result = await subscribeTo3DBlueprint(email);
+    if (result.success) {
+      router.push("/3d-blueprint/dashboard");
+    } else {
+      setLoading(false);
+    }
   }
 
   return (
@@ -35,8 +40,8 @@ export default function BlueprintSqueezePage() {
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
           How I Generated{" "}
-          <span className="text-[#D36A18]">3.5 Million Views</span> With a
-          Talking Blueberry{" "}
+          <span className="text-[#D36A18]">3.5 Million Views</span> From A
+          Single &lsquo;Talking Blueberry&rsquo; Video{" "}
           <span className="text-white/70">(Without Knowing 3D Animation)</span>
         </h1>
 
@@ -46,23 +51,13 @@ export default function BlueprintSqueezePage() {
           style={{ fontFamily: "var(--font-open-sans)" }}
         >
           Everyone thinks viral edutainment requires complex software and weeks
-          of rendering. It doesn&apos;t. I use a handful of plug-and-play AI
-          tools to build these videos in hours. These numbers are achievable,
-          and the process is simpler than you think. Drop your email below to
-          unlock my exact scripting formula and asset generation blueprint for
-          free.
+          of rendering. It doesn&apos;t. I use a simple AI workflow to build
+          these videos in under an hour. These numbers are achievable, and the
+          process is simpler than you think. Drop your email below to unlock my
+          exact scripting formula and asset generation blueprint for free.
         </p>
 
-        {/* Proof image */}
-        <div className="mb-10 w-full">
-          <img
-            src="/proof.png"
-            alt="Analytics"
-            className="mx-auto w-full h-auto rounded-xl shadow-2xl border border-gray-200"
-          />
-        </div>
-
-        {/* Email capture form */}
+        {/* Email capture form — above the fold, before the proof image */}
         <form
           onSubmit={handleSubmit}
           className="flex w-full max-w-md flex-col gap-3 sm:flex-row"
@@ -92,6 +87,15 @@ export default function BlueprintSqueezePage() {
         >
           No spam. Unsubscribe anytime.
         </p>
+
+        {/* Proof image — below the fold as social proof */}
+        <div className="w-full">
+          <img
+            src="/proof.png"
+            alt="Analytics"
+            className="mx-auto w-full max-w-md max-h-96 object-contain rounded-xl shadow-2xl border border-white/10 mt-8"
+          />
+        </div>
       </div>
     </main>
   );
