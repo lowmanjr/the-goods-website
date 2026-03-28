@@ -60,46 +60,26 @@ export default function Home() {
           Creator Tools &amp; Resources
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1 — Produce Wash */}
-          <Link
-            href="/produce-wash"
-            className="block bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-[#D36A18]/50 transition duration-300 group"
-          >
+          <Link href="/produce-wash" className="block bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-[#D36A18]/50 transition duration-300 group">
             <span className="text-3xl mb-4 block">🫐</span>
-            <p
-              className="text-lg font-bold text-white mb-2 group-hover:text-[#D36A18] transition"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              The Viral Produce Wash Guide
-            </p>
-            <p
-              className="text-sm text-gray-400"
-              style={{ fontFamily: "var(--font-open-sans)" }}
-            >
-              The original guide to keeping your berries crisp for weeks.
-            </p>
+            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#D36A18] transition">The Viral Produce Wash</h3>
+            <p className="text-sm text-gray-400">The original free guide to keeping your berries crisp for weeks.</p>
           </Link>
 
-          {/* Card 2 — Amazon Storefront */}
-          <a
-            href="#"
-            className="block bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-[#D36A18]/50 transition duration-300 group"
-          >
+          {/* Card 2 — Paid Guide */}
+          <Link href="/paid-guide" className="block bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-[#D36A18]/50 transition duration-300 group">
+            <span className="text-3xl mb-4 block">📱</span>
+            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#D36A18] transition">The Creator Playbook</h3>
+            <p className="text-sm text-gray-400">My premium strategies for growing and monetizing your audience.</p>
+          </Link>
+
+          {/* Card 3 — Amazon Storefront */}
+          <a href="https://www.amazon.com/shop/thegoodsuniverse?ref_=cm_sw_r_cp_ud_aipsfshop_HJNX6BH6Y7M7M4085JT4" target="_blank" rel="noopener noreferrer" className="block bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-[#D36A18]/50 transition duration-300 group">
             <span className="text-3xl mb-4 block">🛒</span>
-            <p
-              className="text-lg font-bold text-white mb-2 group-hover:text-[#D36A18] transition"
-              style={{ fontFamily: "var(--font-montserrat)" }}
-            >
-              My Production Gear
-            </p>
-            <p
-              className="text-sm text-gray-400"
-              style={{ fontFamily: "var(--font-open-sans)" }}
-            >
-              Shop the exact cameras, lighting, and kitchen tools I use in my
-              videos.
-            </p>
+            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#D36A18] transition">My Production Gear</h3>
+            <p className="text-sm text-gray-400">Shop the exact cameras, lighting, and kitchen tools I use in my videos.</p>
           </a>
         </div>
       </div>
