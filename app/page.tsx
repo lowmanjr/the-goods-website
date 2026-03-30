@@ -10,45 +10,32 @@ export default function Home() {
           className="text-[#D36A18] font-bold tracking-widest text-xs uppercase mb-6"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
-          THE 3.5M VIEW FRAMEWORK
+          THE GOODS UNIVERSE STOREFRONT
         </p>
 
         <h1
           className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight tracking-tight"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
-          Build Viral AI Videos in Minutes.{" "}
-          <span className="text-[#D36A18]">No 3D Animation Skills Required.</span>
+          My Curated Blueprint for a Toxic-Free Home.
         </h1>
 
         <p
           className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
           style={{ fontFamily: "var(--font-open-sans)" }}
         >
-          The exact step-by-step framework I used to generate 3.5 million views
-          with a single AI video. Get the prompts, the tools, and the workflow.
+          Shop the exact buy-it-for-life cookware, safe food storage, and production gear I use daily. No forever chemicals, no microplastics.
         </p>
 
-        <Link
-          href="/3d-blueprint"
+        <a
+          href="https://www.amazon.com/shop/thegoodsuniverse?ref_=cm_sw_r_cp_ud_aipsfshop_HJNX6BH6Y7M7M4085JT4"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block bg-[#D36A18] text-white font-bold text-lg px-10 py-5 rounded-full shadow-[0_0_40px_-10px_#D36A18] hover:bg-[#b85a12] hover:scale-105 transition-all duration-300"
           style={{ fontFamily: "var(--font-montserrat)" }}
         >
-          Unlock the Free AI Blueprint
-        </Link>
-      </div>
-
-      {/* ── Social Proof Banner ── */}
-      <div className="border-y border-white/10 bg-white/[0.02] py-8 mt-8">
-        <p
-          className="text-sm md:text-base text-gray-400 font-medium text-center px-5"
-          style={{ fontFamily: "var(--font-open-sans)" }}
-        >
-          The exact system used to generate{" "}
-          <span className="text-[#D36A18] font-bold">3,500,000+ views</span> and{" "}
-          <span className="text-[#D36A18] font-bold">50,000+ saves</span> across
-          Instagram and TikTok.
-        </p>
+          Shop the Amazon Storefront
+        </a>
       </div>
 
       {/* ── Resources Grid ── */}
@@ -61,26 +48,26 @@ export default function Home() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Card 1 — Produce Wash */}
+          {/* Card 1 — 3D Blueprint */}
+          <Link href="/3d-blueprint" className="block bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-[#D36A18]/50 transition duration-300 group">
+            <span className="text-3xl mb-4 block">🎬</span>
+            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#D36A18] transition">The 3D AI Blueprint</h3>
+            <p className="text-sm text-gray-400">The exact framework used to generate 3.5M views. Free prompts and workflow inside.</p>
+          </Link>
+
+          {/* Card 2 — Produce Wash */}
           <Link href="/produce-wash" className="block bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-[#D36A18]/50 transition duration-300 group">
             <span className="text-3xl mb-4 block">🫐</span>
             <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#D36A18] transition">The Viral Produce Wash</h3>
-            <p className="text-sm text-gray-400">The original free guide to keeping your berries crisp for weeks.</p>
+            <p className="text-sm text-gray-400">The original free guide to the "Vinegar Spa" for keeping berries crisp for weeks.</p>
           </Link>
 
-          {/* Card 2 — Paid Guide */}
+          {/* Card 3 — Paid Guide */}
           <Link href="/paid-guide" className="block bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-[#D36A18]/50 transition duration-300 group">
             <span className="text-3xl mb-4 block">📱</span>
             <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#D36A18] transition">The Creator Playbook</h3>
             <p className="text-sm text-gray-400">My premium strategies for growing and monetizing your audience.</p>
           </Link>
-
-          {/* Card 3 — Amazon Storefront */}
-          <a href="https://www.amazon.com/shop/thegoodsuniverse?ref_=cm_sw_r_cp_ud_aipsfshop_HJNX6BH6Y7M7M4085JT4" target="_blank" rel="noopener noreferrer" className="block bg-[#111] border border-white/10 rounded-2xl p-6 hover:border-[#D36A18]/50 transition duration-300 group">
-            <span className="text-3xl mb-4 block">🛒</span>
-            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#D36A18] transition">My Production Gear</h3>
-            <p className="text-sm text-gray-400">Shop the exact cameras, lighting, and kitchen tools I use in my videos.</p>
-          </a>
         </div>
       </div>
 
