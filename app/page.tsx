@@ -38,29 +38,45 @@ export default function Home() {
         </a>
       </div>
 
-      {/* ── Product Spotlight ── */}
-      <div className="w-full max-w-5xl mx-auto my-16 px-4">
-        <div className="bg-[#111] border border-white/10 rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 hover:border-[#D36A18]/30 transition-all duration-500 relative overflow-hidden">
+      {/* ── Current Obsessions ── */}
+      <div className="w-full max-w-6xl mx-auto my-16 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-          {/* Subtle Background Glow */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#D36A18] opacity-5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-
-          <div className="flex-1 z-10">
-            <span className="text-[#D36A18] font-bold tracking-widest text-xs uppercase mb-3 block">Current Obsession</span>
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">The Toxic-Free Bathroom Upgrade</h2>
-            <p className="text-gray-400 text-sm md:text-base max-w-xl">
-              We spend so much time removing toxins from our food, but ignore the bleached, chemically-treated paper we use every day. This 10-minute install, dual-nozzle bidet is the ultimate daily hygiene upgrade.
-            </p>
-          </div>
-
-          <div className="w-full md:w-auto z-10">
+          {/* Product 1: Luxe Bidet */}
+          <div className="bg-[#111] border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col justify-between hover:border-[#D36A18]/40 hover:-translate-y-1 transition-all duration-300">
+            <div>
+              <span className="text-[#D36A18] font-bold tracking-widest text-xs uppercase mb-3 block">Hygiene Upgrade</span>
+              <h2 className="text-2xl font-bold text-white mb-4">Toxic-Free Bidet Setup</h2>
+              <p className="text-gray-400 text-sm mb-6">
+                Ditch bleached toilet paper. This 10-minute install, dual-nozzle bidet requires no electricity and is the ultimate daily hygiene upgrade for a clean home.
+              </p>
+            </div>
             <a
               href="https://amzn.to/4timhKC"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center bg-white text-black font-bold px-8 py-4 rounded-full hover:bg-gray-200 hover:scale-105 transition-all duration-300"
+              className="inline-block w-full text-center bg-white text-black font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition-all duration-300"
             >
-              Shop the Setup on Amazon
+              Shop the Bidet on Amazon
+            </a>
+          </div>
+
+          {/* Product 2: Dreambaby Duck Thermometer */}
+          <div className="bg-[#111] border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col justify-between hover:border-[#D36A18]/40 hover:-translate-y-1 transition-all duration-300">
+            <div>
+              <span className="text-[#D36A18] font-bold tracking-widest text-xs uppercase mb-3 block">Family Safety</span>
+              <h2 className="text-2xl font-bold text-white mb-4">Digital Bath & Room Thermometer</h2>
+              <p className="text-gray-400 text-sm mb-6">
+                Stops the guesswork of bath safety. Instant, accurate digital readings ensure the water is safe for delicate skin. BPA-free and doubles as a fun toy.
+              </p>
+            </div>
+            <a
+              href="https://amzn.to/419cuKK"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block w-full text-center bg-white text-black font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition-all duration-300"
+            >
+              Shop the Duck on Amazon
             </a>
           </div>
 
