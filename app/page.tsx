@@ -39,45 +39,37 @@ export default function Home() {
       </div>
 
       {/* ── Current Obsessions ── */}
-      <div className="w-full max-w-6xl mx-auto my-16 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="w-full max-w-7xl mx-auto my-16 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
           {/* Product 1: Luxe Bidet */}
-          <div className="bg-[#111] border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col justify-between hover:border-[#D36A18]/40 hover:-translate-y-1 transition-all duration-300">
+          <div className="bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col justify-between hover:border-[#D36A18]/40 transition-all duration-300">
             <div>
               <span className="text-[#D36A18] font-bold tracking-widest text-xs uppercase mb-3 block">Hygiene Upgrade</span>
-              <h2 className="text-2xl font-bold text-white mb-4">Toxic-Free Bidet Setup</h2>
-              <p className="text-gray-400 text-sm mb-6">
-                Ditch bleached toilet paper. This 10-minute install, dual-nozzle bidet requires no electricity and is the ultimate daily hygiene upgrade for a clean home.
-              </p>
+              <h2 className="text-xl font-bold text-white mb-4">Toxic-Free Bidet Setup</h2>
+              <p className="text-gray-400 text-sm mb-6">Ditch bleached paper. This 10-minute install, dual-nozzle bidet is the ultimate daily hygiene upgrade for a clean home.</p>
             </div>
-            <a
-              href="https://amzn.to/4timhKC"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block w-full text-center bg-white text-black font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition-all duration-300"
-            >
-              Shop the Bidet on Amazon
-            </a>
+            <a href="https://amzn.to/4timhKC" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-white text-black font-bold py-3 rounded-full hover:bg-gray-200 transition-all">Shop on Amazon</a>
           </div>
 
-          {/* Product 2: Dreambaby Duck Thermometer */}
-          <div className="bg-[#111] border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col justify-between hover:border-[#D36A18]/40 hover:-translate-y-1 transition-all duration-300">
+          {/* Product 2: Dreambaby Duck */}
+          <div className="bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col justify-between hover:border-[#D36A18]/40 transition-all duration-300">
             <div>
               <span className="text-[#D36A18] font-bold tracking-widest text-xs uppercase mb-3 block">Family Safety</span>
-              <h2 className="text-2xl font-bold text-white mb-4">Digital Bath & Room Thermometer</h2>
-              <p className="text-gray-400 text-sm mb-6">
-                Stops the guesswork of bath safety. Instant, accurate digital readings ensure the water is safe for delicate skin. BPA-free and doubles as a fun toy.
-              </p>
+              <h2 className="text-xl font-bold text-white mb-4">Digital Bath Thermometer</h2>
+              <p className="text-gray-400 text-sm mb-6">Stops the guesswork of bath safety. Instant, accurate digital readings. BPA-free and doubles as a fun toy.</p>
             </div>
-            <a
-              href="https://amzn.to/419cuKK"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block w-full text-center bg-white text-black font-bold px-8 py-4 rounded-full hover:bg-gray-200 transition-all duration-300"
-            >
-              Shop the Duck on Amazon
-            </a>
+            <a href="https://amzn.to/419cuKK" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-white text-black font-bold py-3 rounded-full hover:bg-gray-200 transition-all">Shop on Amazon</a>
+          </div>
+
+          {/* Product 3: Tramontina Stainless Steel Skillet */}
+          <div className="bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col justify-between hover:border-[#D36A18]/40 transition-all duration-300">
+            <div>
+              <span className="text-[#D36A18] font-bold tracking-widest text-xs uppercase mb-3 block">Toxic-Free Cookware</span>
+              <h2 className="text-xl font-bold text-white mb-4">Tri-Ply Stainless Steel Skillet</h2>
+              <p className="text-gray-400 text-sm mb-6">Ditch the forever chemicals in non-stick pans. This 12-inch professional skillet is buy-it-for-life, NSF-certified, and toxic-free.</p>
+            </div>
+            <a href="https://amzn.to/48fco87" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-white text-black font-bold py-3 rounded-full hover:bg-gray-200 transition-all">Shop on Amazon</a>
           </div>
 
         </div>
