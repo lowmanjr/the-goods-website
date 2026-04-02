@@ -40,7 +40,7 @@ export default function Home() {
 
       {/* ── Current Obsessions ── */}
       <div className="w-full max-w-7xl mx-auto my-16 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
           {/* Product 1: Luxe Bidet */}
           <div className="bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col justify-between hover:border-[#D36A18]/40 transition-all duration-300">
@@ -70,6 +70,26 @@ export default function Home() {
               <p className="text-gray-400 text-sm mb-6">Ditch the forever chemicals in non-stick pans. This 12-inch professional skillet is buy-it-for-life, NSF-certified, and toxic-free.</p>
             </div>
             <a href="https://amzn.to/48fco87" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-white text-black font-bold py-3 rounded-full hover:bg-gray-200 transition-all">Shop on Amazon</a>
+          </div>
+
+          {/* Product 4: Mold Control */}
+          <div className="bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col justify-between hover:border-[#D36A18]/40 transition-all duration-300">
+            <div>
+              <span className="text-[#D36A18] font-bold tracking-widest text-xs uppercase mb-3 block">Safe Chemistry</span>
+              <h2 className="text-xl font-bold text-white mb-4">Concrobium Mold Control</h2>
+              <p className="text-gray-400 text-sm mb-6">Stop using bleach. This odorless, VOC-free spray kills mold at the root and prevents regrowth without any toxic fumes.</p>
+            </div>
+            <a href="https://amzn.to/4m3E8SW" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-white text-black font-bold py-3 rounded-full hover:bg-gray-200 transition-all">Shop on Amazon</a>
+          </div>
+
+          {/* Product 5: Microfiber Cloths */}
+          <div className="bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col justify-between hover:border-[#D36A18]/40 transition-all duration-300">
+            <div>
+              <span className="text-[#D36A18] font-bold tracking-widest text-xs uppercase mb-3 block">Cleaning System</span>
+              <h2 className="text-xl font-bold text-white mb-4">Color-Coded Microfiber Sets</h2>
+              <p className="text-gray-400 text-sm mb-6">Professional-grade towels for every room. Use the 4-color assortment to prevent cross-contamination in your home.</p>
+            </div>
+            <a href="https://amzn.to/4tp0H7d" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-white text-black font-bold py-3 rounded-full hover:bg-gray-200 transition-all">Shop on Amazon</a>
           </div>
 
         </div>
@@ -105,6 +125,16 @@ export default function Home() {
             <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#D36A18] transition">The Creator Playbook</h3>
             <p className="text-sm text-gray-400">My premium strategies for growing and monetizing your audience.</p>
           </Link>
+        </div>
+      </div>
+
+      {/* ── Quick Essentials ── */}
+      <div className="w-full border-t border-white/5 pt-12 pb-20 text-center">
+        <h3 className="text-white/30 text-xs uppercase tracking-[0.2em] mb-8 font-bold">Quick Cleaning Essentials</h3>
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 px-4 text-sm font-medium">
+          <a href="https://amzn.to/4m3E8SW" target="_blank" className="text-gray-400 hover:text-[#D36A18] transition">[ Kill Mold Safely ]</a>
+          <a href="https://amzn.to/4tp0H7d" target="_blank" className="text-gray-400 hover:text-[#D36A18] transition">[ Color-Coded Rags ]</a>
+          <a href="https://www.amazon.com/shop/thegoodsuniverse?ref_=cm_sw_r_cp_ud_aipsfshop_HJNX6BH6Y7M7M4085JT4" target="_blank" className="text-gray-400 hover:text-[#D36A18] transition">[ Shop All Gear ]</a>
         </div>
       </div>
 
