@@ -92,6 +92,16 @@ export default function Home() {
             <a href="https://amzn.to/4tp0H7d" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-white text-black font-bold py-3 rounded-full hover:bg-gray-200 transition-all">Shop on Amazon</a>
           </div>
 
+          {/* Product 6: Just Bare Chicken Strips */}
+          <div className="bg-[#111] border border-white/10 rounded-3xl p-8 flex flex-col justify-between hover:border-[#D36A18]/40 transition-all duration-300">
+            <div>
+              <span className="text-[#D36A18] font-bold tracking-widest text-xs uppercase mb-3 block">Clean Convenience</span>
+              <h2 className="text-xl font-bold text-white mb-4">Just Bare Chicken Strips</h2>
+              <p className="text-gray-400 text-sm mb-6">16g of protein and no antibiotics. The lightly breaded, clean-ingredient shortcut I trust for quick, healthy meals on busy nights.</p>
+            </div>
+            <a href="https://amzn.to/41x62xv" target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-white text-black font-bold py-3 rounded-full hover:bg-gray-200 transition-all">Shop on Amazon</a>
+          </div>
+
         </div>
       </div>
 
